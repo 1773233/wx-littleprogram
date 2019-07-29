@@ -1,0 +1,15 @@
+<!--pages/getuserinfo/getuserinfo.wxml-->
+<view class="container">
+  <view class='logtitle'>
+    <image src='/images/logo.png'></image>
+    <view class='logappname'>五一八快运</view>
+    <view class='logtips'>{{tipmessage}}</view>
+  </view>
+  <view class="loguserinfo" wx:if="{{hasuserinfo==false}}">
+    <button class='loggetuserinfo' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 确认授权并登录 </button>
+  </view>
+  <view class="loguserinfo" wx:else>
+    <button wx:if="{{isgeting==false}}" class='loggetuserinfo' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> 授权绑定手机号 </button>
+  </view>
+</view>
+

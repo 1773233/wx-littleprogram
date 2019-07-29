@@ -1,0 +1,49 @@
+<!--pages/cityselect/cityselect.wxml-->
+<view class='wraper'>
+    <scroll-view class='scrollview' scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true">
+        <view class='cityinput'>
+          <view class='search'><image src='/images/search.png'></image></view><input type='text' placeholder-class='holderstyle' placeholder='请输入城市名称' bindinput='searchcity'></input><view class='inputconfirm' bindtap='confirmsearch'>确定</view>
+        </view>
+        <view class='title'>
+            您的当前城市
+        </view>
+        <view class='cityblock'>
+            <view class='city' data-value="{{locatcity}}" bindtap='cityselect'>
+                {{locatcity}}
+            </view>
+            <view class='clearfloat'></view>
+        </view>
+        <view class='title' id='HOT'>
+            热门城市
+        </view>
+        <view class='cityblock'>
+            <block wx:for="{{hotcities}}" wx:key="cityid">
+                <view class='city' data-value="{{item}}" bindtap='cityselect'>
+                    {{item}}
+                </view>
+            </block>
+            <view class='clearfloat'></view>
+        </view>
+        <view class='blocks' wx:for="{{cityblocklist}}" wx:key="ind">
+            <view class='title' id='{{item.abc}}' wx:if="{{item.value.length!=0}}">
+                {{item.abc}}
+            </view>
+            <view class='cityblock'>
+                <block wx:for="{{item.value}}" wx:key="id" wx:for-item="cityitem">
+                    <view class='city {{highlightcity==cityitem.name?"active":""}}' data-value="{{cityitem.name}}" bindtap='cityselect'>
+                        {{cityitem.name}}
+                    </view>
+                </block>
+                <view class='clearfloat'></view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class='fastmenu'>
+        <view class='menutab' data-value="HOT" bindtap='scrooltopos'>
+            热
+        </view>
+        <view class='menutab' data-value="{{item}}" wx:for="{{abcs}}" wx:key="*this" bindtap='scrooltopos'>
+            {{item}}
+        </view>
+    </view>
+</view>

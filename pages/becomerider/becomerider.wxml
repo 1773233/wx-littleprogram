@@ -1,0 +1,210 @@
+<!--pages/becomerider/becomerider.wxml-->
+<view class='wraper'>
+    <view class='progress'>
+        <view class='background'></view>
+        <view class='progressbarpoint weui-flex'>
+            <view class='weui-flex__item progressitem'>
+                <image src='/images/u844.png'></image>
+                <view class='progressstep'>1</view>
+                <view class='progressstepname'>完善资料</view>
+            </view>
+             <view class='weui-flex__item item2 progressitem'>
+                <image src='{{riderstatus>=1?"/images/u844.png":"/images/u846.png"}}'></image>
+                <view class='progressstep'>2</view>
+                <view class='progressstepname'>资料审核</view>
+            </view> 
+            <view class='weui-flex__item progressitem'>
+                <image src='/images/u844.png' wx:if="{{riderstatus==1}}"></image>
+                <image src='/images/u844.png' wx:if="{{riderstatus==4}}"></image>
+                <image src='/images/u846.png' wx:if="{{riderstatus==-1}}"></image>
+                <image src='/images/u846.png' wx:if="{{riderstatus==0}}"></image>
+                <image src='/images/u846.png' wx:if="{{riderstatus==3}}"></image>
+                <view class='progressstep'>3</view>
+                <view class='progressstepname' wx:if="{{riderstatus==1}}">审核成功</view>
+                <view class='progressstepname' wx:elif="{{riderstatus==4}}">审核失败</view>
+                <view class='progressstepname' wx:else>审核结果</view>
+            </view>            
+        </view>
+    </view>
+    <view class='infowrap'>
+        <view class='useravatar'>
+            <image src='/images/himg.png'></image>
+        </view>
+        <view class='tipmessage' wx:if="{{riderstatus==1}}">
+        审核成功
+        </view>
+        <view class='tipmessage' wx:elif="{{riderstatus==4}}">
+        审核失败  {{failstatusreson}}
+        </view>
+        <view class='tipmessage' wx:elif="{{riderstatus==0}}">
+        账户已被禁用
+        </view>
+        <view class='tipmessage' wx:elif="{{riderstatus==3}}">
+        资料审核中
+        </view>
+        <view class='tipmessage' wx:else>
+        【注】：游侠注册年龄段位18-50岁之间
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item title'>
+                 <picker value="{{index}}" range="{{array}}">
+                    <text class='nesscery'>*</text>登录名
+                </picker>
+            </view>
+            <view class='weui-flex__item item4'>
+                <text class='logname'>{{logname?logname:"网络错误,请重试"}}</text>
+            </view>
+            <view class='weui-flex__item itemsm'>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item title'><text class='nesscery'>*</text>地区</view>
+            <picker mode="multiSelector" 
+            disabled='{{riderstatus==-1?"":"true"}}' 
+            class='weui-flex__item item4 placeholderstyle light' 
+            bindchange='regionChange' bindcolumnchange="regioncolumnchange" value="{{regionIndex}}" range="{{regionArray}}">
+                 {{regionArray[0][regionIndex[0]]}}，{{regionArray[1][regionIndex[1]]}}，{{regionArray[2][regionIndex[2]]}}
+            </picker>
+            <view class='weui-flex__item itemsm'>
+                <view class='arrowright'>
+                    <image src="/images/arrowright.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item title'> 
+                <text class='nesscery'>*</text>姓名
+            </view>
+            <view class='weui-flex__item item4'>
+                <input type='text' placeholder='请输入您的真实姓名' disabled='{{riderstatus==-1?"":"disabled"}}' value='{{realname}}' bindinput='nameinput' placeholder-class='holderclass'></input>
+            </view>
+            <view class='weui-flex__item itemsm'></view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item title'><text class='nesscery'>*</text>手机号</view>
+            <view class='weui-flex__item item4'>
+                <input type='text' value='{{phone}}' disabled='{{riderstatus==-1?"":"disabled"}}' bindinput='telinput' placeholder='请输入您的手机号' placeholder-class='holderclass'></input>
+            </view>
+            <view class='weui-flex__item itemsm'></view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item title'> 
+                <text class='nesscery'>*</text>性别
+            </view>
+            <view class='weui-flex__item item4'>
+                <view class='sex' bindtap='sexselected' data-value="{{sex[0].value}}">
+                    <image src='/images/icheck.png' wx:if="{{sex[0].selected}}"></image>
+                    <image src='/images/ino.png' wx:if="{{!sex[0].selected}}"></image>
+                    <text>男</text>
+                </view>
+                <view class='sex' bindtap='sexselected' data-value="{{sex[1].value}}">
+                    <image src='/images/icheck.png' wx:if="{{sex[1].selected}}"></image>
+                    <image src='/images/ino.png' wx:if="{{!sex[1].selected}}"></image>
+                    <text>女</text>
+                </view>
+            </view>
+            <view class='weui-flex__item itemsm'></view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item item1hf title'><text class='nesscery'>*</text>身份证号</view>
+            <view class='weui-flex__item item4'>
+                <input type='text' placeholder='请输入您的真实身份证号码' disabled='{{riderstatus==-1?"":"disabled"}}' value='{{idcardnumber}}' bindinput='idcardinput' placeholder-class='holderclass'></input>
+            </view>
+            <view class='weui-flex__item itemsm'></view>
+        </view>
+        <view class='weui-flex bordernone'>
+            <view class='weui-flex__item item2 title'><text class='nesscery'>*</text>身份证正面照</view>
+            <view class='weui-flex__item item4'>
+            </view>
+        </view>
+        <view class='weui-flex bordernone'>
+            <view class='weui-flex__item'>
+                <view class='pics example'>
+                    <image class='default' src='/images/sfz1.png'></image>
+                </view>
+            </view>
+            <view class='weui-flex__item' bindtap='choosesfzzmimage'>
+                <view class='pics'>
+                    <block wx:if="{{riderstatus==-1}}">
+                        <image wx:if="{{!sfzzmselected}}" class='default' src='/images/pho.png'></image>
+                        <image class='selected' src='{{sfzzmurl}}' wx:else></image>
+                    </block>
+                    <block wx:else>
+                        <image class='selected' src='{{sfzzmurl}}'></image>
+                    </block>
+                </view>
+            </view>
+        </view>
+        <view class='weui-flex bordernone'>
+            <view class='weui-flex__item item2 title'><text class='nesscery'>*</text>身份证反面照</view>
+            <view class='weui-flex__item item4'>
+            </view>
+        </view>
+        <view class='weui-flex bordernone'>
+            <view class='weui-flex__item'>
+                <view class='pics example'>
+                    <image class='default' src='/images/sfz2.png'></image>
+                </view>
+            </view>
+            <view class='weui-flex__item' bindtap='choosesfzfmimage'>
+                <view class='pics'>
+                    <block wx:if="{{riderstatus==-1}}">
+                        <image wx:if="{{!sfzfmselected}}" class='default' src='/images/pho.png'></image>
+                        <image class='selected' src='{{sfzfmurl}}' wx:else></image>
+                    </block>
+                    <block wx:else>
+                        <image class='selected' src='{{sfzfmurl}}'></image>
+                    </block>
+                </view>
+            </view>
+        </view>
+        <view class='weui-flex bordernone'>
+            <view class='weui-flex__item item2 title'><text class='nesscery'>*</text>手持身份证照片</view>
+            <view class='weui-flex__item item4'>
+            </view>
+        </view> 
+        <view class='weui-flex bordernone'>
+            <view class='weui-flex__item'>
+                <view class='pics example'>
+                    <image class='default' src='/images/sfz.jpg'></image>
+                </view>
+            </view>
+            <view class='weui-flex__item' bindtap='choosehandimage'>
+                <view class='pics'>
+                    <block wx:if="{{riderstatus==-1}}">
+                        <image wx:if="{{!handsfzselected}}" class='default' src='/images/pho.png'></image>
+                        <image class='selected' src='{{handsfzurl}}' wx:else></image>
+                    </block>
+                    <block wx:else>
+                        <image class='selected' src='{{handsfzurl}}'></image>
+                    </block>
+                </view>
+            </view>
+        </view>
+        <view class='tipmessage' wx:if="{{riderstatus==1}}">
+          审核成功
+        </view>
+        <view class='tipmessage' wx:elif="{{riderstatus==4}}">
+          审核失败  {{failstatusreson}}
+        </view>
+        <view class='tipmessage' wx:elif="{{riderstatus==0}}">
+          账户已被禁用
+        </view>
+        <view class='tipmessage' wx:elif="{{riderstatus==3}}">
+          资料审核中
+        </view>
+        <view class='tipmessage' wx:else>
+            #请手持身份证并进行正面拍摄，请确保被拍摄人与身份证的完整性
+        </view>
+    </view> 
+    <view class='btn'>
+        <view class='submit' bindtap='submit' wx:if="{{riderstatus==-1}}">
+            <image src='/images/78955.png'></image>
+            <text>确认提交</text>
+        </view>
+        <view class='submit' bindtap='resubmit' wx:if="{{riderstatus==4}}">
+            <image src='/images/78955.png'></image>
+            <text>重新提交</text>
+        </view>
+    </view>
+</view>

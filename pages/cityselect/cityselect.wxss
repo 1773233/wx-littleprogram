@@ -1,0 +1,139 @@
+/* pages/cityselect/cityselect.wxss */
+.wraper{
+  width: 100%;
+  height: auto;
+  box-sizing:border-box;
+  position: relative;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+}
+.wraper .fastmenu{
+  position: absolute;
+  width: 60rpx;
+  height: auto;
+  right: 0px;
+  top: 100rpx;
+}
+.wraper .menutab{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #FE8702;
+  cursor: pointer;
+}
+.wraper .cityinput{
+  width: 400rpx;
+  margin-left: 20%;
+  height: 80rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  border: 1px solid #eee;
+  border-radius: 5rpx;
+}
+.wraper .cityinput .search{
+  width: 80rpx;
+  height: 80rpx;
+  float: left;
+}
+.wraper .cityinput .search image{
+  width: 100%;
+  height: 100%;
+}
+.wraper .cityinput input{
+  width: 240rpx;
+  height: 100%;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  float: left;
+  color: #333;
+}
+.wraper .cityinput .inputconfirm{
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #eee;
+  color: #333;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  text-align: center;
+  float: right;
+}
+.wraper .cityinput .holderstyle{
+  font-size: 28rpx;
+  color: #999;
+  line-height: 80rpx;
+  text-align: 20rpx;
+}
+.wraper .title{
+  width: 100%;
+  height: 80rpx;
+  text-align: left;
+  padding-left: 20rpx;
+  color: #999;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  background-color: #f5f5f5;
+}
+.wraper .cityblock{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding-top: 20rpx;
+  padding-left: 2%;
+}
+.wraper .city{
+  width: 28%;
+  height: 70rpx;
+  margin-right: 3%;
+  margin-bottom: 20rpx;
+  float: left;
+  border: 1px solid #eee;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  color: #666;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.wraper .city.active{
+  border-color: #FE8702;
+  color: #FE8702;
+  position: relative;
+}
+.wraper .scrollview{
+  height:100vh;
+}
+.wraper .blocks{
+  width: 100%;
+  height: auto;
+}
+.clearfloat{
+  clear: both;
+}

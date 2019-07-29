@@ -1,0 +1,9 @@
+<!--pages/pricerule/pricerule.wxml-->
+<view class='wraper'>
+  <view class='title'>价格说明</view>
+  <view class='content'>
+    <web-view src="{{ruleurl}}"></web-view>
+  </view>
+</view>
+
+

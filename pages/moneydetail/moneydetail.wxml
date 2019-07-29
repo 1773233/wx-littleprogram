@@ -1,0 +1,28 @@
+<!--pages/moneydetail/moneydetail.wxml-->
+<template name="moneydetail">
+    <view class='weui-flex detailitem'>
+        <view class='weui-flex__item item4'>
+            <view class='title'>{{remark}}</view>
+            <view class='date'>{{create_time}}</view>
+        </view>
+        <view class='weui-flex__item costmoney'>
+            <text wx:if="type==0?">{{type==0?"+":"-"}}{{money}}元</text>
+            <text wx:else>-{{money}}元</text>
+        </view>
+    </view>
+    <view class='weui-flex placehoder'>
+        <view class='weui-flex__item item4 borderbtom'>
+        </view>
+        <view class='weui-flex__item borderbtom'>
+        </view>
+    </view>
+</template>
+<view class='wraper'>
+    <block wx:for="{{moneydetail}}" wx:key="id">
+        <template is="moneydetail" data="{{...item}}"></template>
+    </block>
+    <view class='nodata' wx:if="{{moneydetail.length==0}}">
+      <image src='/images/nodata.png'></image>
+      <view class='tipinfo'>暂无数据</view>
+    </view>
+</view>

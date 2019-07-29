@@ -1,0 +1,82 @@
+<!--pages/pricedetail/pricedetail.wxml-->
+<view class='wraper'>
+  <view class='navtitle' bindtap='topricerule'>计价标准</view>
+  <view class='map'>
+    <map id="map" scale="{{mapscale}}" longitude="{{longitude}}" include-points="{{includepoints}}" latitude="{{latitude}}" markers='{{markers}}'>
+      <cover-view class="mappointinfo">
+          <cover-image class='pointinfoback' src='/images/ert.png'></cover-image>
+          <cover-view class='pointinfotextwrap'>
+              <cover-view class='pointinfotext'>订单距离{{moneydetail.km?moneydetail.km:0}}公里</cover-view>
+          </cover-view>
+      </cover-view>
+    </map>
+  </view>
+  <view class='weui-flex infoitem borderbom' wx:if="{{moneydetail!=null}}">
+    <view class='weui-flex__item item4'>
+      <view class='itemtitle'>起步价(含{{moneydetail.startKm}}公里)</view>
+    </view>
+    <view class='weui-flex__item'>
+      <view class='money'>{{moneydetail.startPrice}}元</view>
+    </view>    
+  </view>
+  <view class='weui-flex infoitem borderbom' wx:if="{{lichen>0}}">
+    <view class='weui-flex__item item4'>
+      <view class='itemtitle'>里程费({{lichen}}公里)</view>
+    </view>
+    <view class='weui-flex__item'>
+      <view class='money'>{{moreprice}}元</view>
+    </view>    
+  </view>
+  <view class='weui-flex infoitem borderbom' wx:if="{{weightprice>0}}">
+    <view class='weui-flex__item item4'>
+      <view class='itemtitle'>重量加价</view>
+    </view>
+    <view class='weui-flex__item'>
+      <view class='money'>{{weightprice}}元</view>
+    </view>    
+  </view>
+  <view class='weui-flex infoitem borderbom' wx:if="{{nightprice>0}}">
+    <view class='weui-flex__item item4'>
+      <view class='itemtitle'>夜间加价</view>
+    </view>
+    <view class='weui-flex__item'>
+      <view class='money'>{{nightprice}}元</view>
+    </view>    
+  </view>
+  <view class='weui-flex infoitem borderbom' wx:if="{{gratutity>0}}">
+    <view class='weui-flex__item item4'>
+      <view class='itemtitle'>小费</view>
+    </view>
+    <view class='weui-flex__item'>
+      <view class='money'>{{gratutity}}元</view>
+    </view>    
+  </view>
+  <view class='weui-flex infoitem borderbom' wx:if="{{dfmoney>0}}">
+    <view class='weui-flex__item item4'>
+      <view class='itemtitle'>垫付费用</view>
+    </view>
+    <view class='weui-flex__item'>
+      <view class='money'>{{dfmoney}}元</view>
+    </view>    
+  </view>
+  <view class='weui-flex infoitem borderbom' wx:if="{{yjpercent!=0}}">
+    <view class='weui-flex__item item4'>
+      <view class='itemtitle'>溢价费</view>
+    </view>
+    <view class='weui-flex__item'>
+      <view class='money'>{{yjpercent*moneydetail.km}}元</view>
+    </view>    
+  </view>
+  <view class='weui-flex infoitem borderbom' wx:if="{{ticketprice>0}}">
+    <view class='weui-flex__item item4'>
+      <view class='itemtitle'>优惠券</view>
+    </view>
+    <view class='weui-flex__item'>
+      <view class='money'>{{ticketprice}}元</view>
+    </view>    
+  </view>
+  <view class='totalsub' wx:if="{{totalmoney!=0}}">
+    费用合计：{{totalmoney}}元
+  </view>
+  <view class="tipmsg">*实际费用可能因实际行驶里程/等候时间等因素而异</view>
+</view>

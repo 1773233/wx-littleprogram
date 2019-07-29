@@ -1,0 +1,44 @@
+/* pages/sharecallback/sharecallback.wxss */
+.wraper{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fff;
+}
+.webwrap{
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+.webwrap image{
+  width: 400rpx;
+  height: 400rpx;
+  margin-top: 300rpx;
+  margin-bottom: 50rpx;
+}
+.webwrap .tip{
+  font-size: 30rpx;
+  color: #666;
+  line-height: 60rpx;
+}
+.save{
+  width: 60%;
+  height: 80rpx;
+  background-color: #131426;
+  color: #fff;
+  margin-left: 20%;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+.hidden{
+  display: none;
+}
+.mycanvas{
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 300rpx;
+  margin-bottom: 50rpx;
+}

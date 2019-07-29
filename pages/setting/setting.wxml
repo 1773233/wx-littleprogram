@@ -1,0 +1,48 @@
+<!--pages/setting/setting.wxml-->
+<view class='wraper'>
+    <view class='funcionwrap'>
+        <view class='weui-flex' bindtap='tomyaddress'>
+            <view class='weui-flex__item item6 title'>
+                我的地址
+            </view>
+            <view class='weui-flex__item'>
+                <view class='arrowright'>
+                    <image src="/images/arrowright.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class='weui-flex' bindtap='tocardmanage'>
+            <view class='weui-flex__item item6 title'>
+                银行卡管理
+            </view>
+            <view class='weui-flex__item'>
+                <view class='arrowright'>
+                    <image src="/images/arrowright.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class='weui-flex' bindtap='toabout'>
+            <view class='weui-flex__item item6 title'>
+                关于我们
+            </view>
+            <view class='weui-flex__item'>
+                <view class='arrowright'>
+                    <image src="/images/arrowright.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class='weui-flex' bindtap='clearstorage'>
+            <view class='weui-flex__item item2 title'>
+                清除缓存
+            </view>
+            <view class='weui-flex__item item6 value'>
+                {{storagesize}}
+            </view>
+            <view class='weui-flex__item'>
+                <view class='arrowright'>
+                    <image src="/images/arrowright.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

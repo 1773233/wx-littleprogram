@@ -1,0 +1,63 @@
+<!--pages/comment/comment.wxml-->
+<view class='wraper'>
+    <view wx:if="{{rider.id!=null}}" class='commenttitle weui-flex'>
+      <view class='weui-flex__item'>
+        <view class='headimg'>
+            <image src='{{rider.headimg[0]?rider.headimg[0]:"/images/logo.png"}}'></image>
+        </view>
+      </view>
+      <view class='weui-flex__item item4'>
+          <view class='info'>
+            {{rider.name==null?"518快运":rider.name}} {{rider.sex==1?"男":"女"}}
+          </view>
+      </view>
+      <view class='weui-flex__item'>
+        <view class='call'>
+            <image src='/images/phonecall.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='commentcontent'>
+        <textarea placeholder-class='holderstyle' bindinput='commentinput' placeholder='亲，本次服务如何，请输入您的评价'></textarea>
+    </view>
+    <view class='imagesarea'>
+        <block wx:for="{{commentimgs}}" wx:key="id">
+            <view class='inlineblock'>
+              <image class='photo' src='{{item.url}}'></image>
+              <image class='close' data-id="{{item.id}}" bindtap='removeimg' src='/images/del.png'></image>
+            </view>
+        </block>
+        <view class='clearfloat'></view>
+    </view>
+    <view class='addarea'>
+        <view class='addimage' bindtap='selectimage'>
+            <image src='/images/pho.png'></image>
+            <text>添加图片</text>
+        </view>
+    </view>
+    <view class="stars weui-flex">
+      <view class='weui-flex__item title'>服务评分</view>
+      <view class='weui-flex__item item3 weui-flex'>
+          <block wx:for="{{stars}}" wx:key="id">
+              <view class="star weui-flex__item" id="{{item.id}}" bindtap='starselect'>
+                  <image src='{{selectindex>=item.id?item.selecturl:item.notselecturl}}'></image>
+              </view>
+          </block>
+      </view>
+      <view class='weui-flex__item'></view>
+    </view>
+    <view class="stars weui-flex">
+      <view class='weui-flex__item title'>时效评分</view>
+      <view class='weui-flex__item item3 weui-flex'>
+          <block wx:for="{{timestar}}" wx:key="id">
+              <view class="star weui-flex__item" id="{{item.id}}" bindtap='timestarselect'>
+                  <image src='{{selecttimeindex>=item.id?item.selecturl:item.notselecturl}}'></image>
+              </view>
+          </block>
+      </view>
+      <view class='weui-flex__item'></view>
+    </view>
+    <view class='submit' bindtap='submitcomment'>
+     提交评价
+    </view>
+</view>

@@ -1,0 +1,19 @@
+<!--pages/help/help.wxml-->
+<view class='wraper'>
+    <view class='title'>热点问题</view>
+    <view class='helpitem weui-flex' wx:for="{{quelist}}" wx:key="id" id="{{item.id}}" bindtap='todetailpage'>
+        <view class='weui-flex__item item2 helpitemtit'>{{item.title}}</view>
+        <view class='weui-flex__item'>
+            <view class='arrowright'>
+                <image src='/images/arrowright.png'></image>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{quelist.length==0}}" class='noaddress'>
+      <image class='nodata' src='/images/nodata.png'></image>
+      <view class='tipinfo'>暂无热点问题</view>
+    </view>
+    <button class='btn' open-type='contact'>
+      在线客服
+    </button>
+</view> 

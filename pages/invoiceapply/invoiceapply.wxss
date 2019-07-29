@@ -1,0 +1,224 @@
+/* pages/invoiceapply/invoiceapply.wxss */
+.wraper{
+  width: 100%;
+  height: auto;
+  box-sizing:border-box;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+  text-align: center;
+  padding: 0px;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+  text-align: center;
+  padding: 0px;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+  text-align: center;
+  padding: 0px;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+  text-align: center;
+  padding: 0px;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+  text-align: center;
+  padding: 0px;
+}
+.itemhf{
+  -webkit-box-flex:.5;
+  -webkit-flex:.5;
+  flex:.5;
+  text-align: center;
+  padding: 0px;
+}
+.arrowright{
+  width: 12rpx;
+  height:26rpx;
+  margin-top: 16rpx;
+  float: right;
+  margin-right: 15rpx;
+}
+.arrowright image{
+  width: 100%;
+  height: 100%;
+}
+.hide{
+  display: none;
+}
+.wraper .blocktitle{
+  width: 100%;
+  text-align: left;
+  text-indent: 10rpx;
+  color: #555;
+  font-size: 26rpx;
+  background-color: #F5F5F5;
+  padding:20rpx 0rpx;
+}
+.wraper .invoicetype{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+}
+.wraper .invoicetypeitem{
+  height: auto;
+}
+.wraper .invoicetypeitem .invoicetypeitemwrap{
+  height:140rpx;
+  width: 90%;
+  margin: 20rpx auto;
+  border: 1rpx solid #eee;
+  border-radius:5rpx;
+}
+.wraper .invoicetypeitem text{
+  width: 100%;
+  text-align: center;
+  height: 70rpx;
+  display: inline-block;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.wraper .invoicetypeitem text.typename{
+  line-height: 90rpx;
+}
+.wraper .invoicetypeitem.active .invoicetypeitemwrap{
+  border: 1rpx solid #FE8702;
+}
+.wraper .invoicetypeitem.active text{
+  color: #FE8702;
+}
+.wraper .invoicedetail{
+  height: 90rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+}
+.wraper .invoicedetailtitle{
+  height: 100%;
+  line-height: 90rpx;
+  color: #333;
+  font-size: 28rpx;
+  text-align: left;
+  text-indent: 20rpx;
+}
+.wraper .checkboxfloat{
+  float: left;
+  padding-top: 5rpx;
+  position: initial;
+  margin: 0rpx;
+  padding-right: 0rpx;
+}
+.wraper .checkboxfloat:active{
+  background-color: transparent;
+}
+.wraper .checkboxname{
+  color: #555;
+  font-size: 26rpx;
+  padding-top: 20rpx;
+}
+.wraper .checkboxfloat .selectedicon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 4.6px;
+}
+.wraper .checkboxfloat .selectedicon image{
+  width: 100%;
+  height: 100%;
+}
+.wraper .invoicedetailvalue{
+  width: 90%;
+  margin-left: 5%;
+  height: 100%;
+  border: none;
+  outline: none;
+  color: #333;
+  font-size: 26rpx;
+  text-align: left;
+  line-height: 90rpx;
+}
+ .wraper .invoicedetailvaluetip{
+  color: #999;
+  text-align: left;
+  width: 100%;
+  text-indent: 0rpx;
+  height: 100%;
+  line-height: 90rpx;
+  font-size: 26rpx;
+} 
+.wraper .invoicecontent{
+  color: #555;
+  font-size: 26rpx;
+  line-height: 90rpx;
+  width: 100%;
+  text-align: left;
+  text-indent: 30rpx;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wraper .spaddress{
+  color: #555;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  display: -webkit-box;
+  width: 90%;
+  padding-left: 30rpx;
+  text-align: left;
+  max-width: 400rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+.wraper .colorgray{
+  color: #999;
+}
+.wraper .spaddress.colorgray{
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+.wraper .invoicetip{
+  color: #999;
+  font-size: 24rpx;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: white;
+  border-bottom: 1rpx solid #ddd;
+}
+.wraper .invoicetip .tipitem{
+  text-indent: 10rpx;
+}
+.wraper .invoicetip .colorred{
+  color: red;
+}
+.btn{
+  width: 100%;
+  height: auto;
+}
+.btn .applynow{
+  width: 80%;
+  margin:40rpx 10%;
+  background-color: #131426;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+  border-radius: 10rpx;
+}

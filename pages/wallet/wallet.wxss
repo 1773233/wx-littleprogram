@@ -1,0 +1,309 @@
+/* pages/wallet/wallet.wxss */
+.wraper{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+  text-align: center;
+  padding: 0px;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+  text-align: center;
+  padding: 0px;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+  text-align: center;
+  padding: 0px;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+  text-align: center;
+  padding: 0px;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+  text-align: center;
+  padding: 0px;
+}
+.nav{
+  width: 100%;
+  height: 80rpx;
+  background-color: #131426;
+  text-align: right;
+  margin-bottom: 20rpx;
+  box-shadow: 0px 1rpx 5rpx 1rpx #eee;
+}
+.nav .moneydetail{
+  color: #fff;
+  font-size: 30rpx;
+  letter-spacing: 2rpx;
+  line-height: 80rpx;
+  padding-right: 50rpx;
+}
+.nav .moneydetail:active{
+  color: #fe8b03;
+}
+.pagetitle{
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  color: #333;
+  font-weight: 400;
+  margin-top: 200rpx;
+  font-family: 'Arial Normal', 'Arial';
+  font-style: normal;
+}
+.money{
+  width: 100%;
+  height: 60rpx;
+  line-height:60rpx;
+  font-size: 46rpx;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+}
+.showdetail{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: lighter;
+}
+.btns{
+  width: 90%;
+  margin-top: 200rpx;
+  margin-left: 5%;
+}
+.cashout{
+  margin-top: 40rpx;
+}
+.btns .recharge{
+  background-color: #131426;
+  border-color: #131426;
+  color: #ffffff;
+  line-height: 100rpx;
+  height: 100rpx;
+  font-size: 28rpx;
+}
+.btns .getmoney{
+  background-color: #ffffff;
+  border:1rpx solid #131426;
+  font-size: 28rpx;
+  color: #000;
+  line-height: 100rpx;
+  height: 100rpx;  
+}
+.applyticket{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 400;
+  position: absolute;
+  bottom: 10rpx;
+}
+.selectforsure view{
+  font-size: 30rpx;
+  margin: 0rpx;
+  color: #333;
+  line-height: 100rpx;
+  padding: 0rpx;
+}
+
+.custompicker{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 996;
+  display: none;  
+}
+.custompicker.showpicker{
+  display: block;
+}
+.custompicker .emptyarea{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 997;
+  background: rgba(0, 0, 0, 0.7);
+}
+.custompicker .pickerwraper{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: white;
+  transition: all 0.4s ease;
+  z-index: 999;
+  padding-bottom: 30rpx;
+}
+.custompicker .pickercontent{
+  width: 100%;
+  overflow: hidden;
+}
+.custompicker .title{
+  height: 100rpx;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+}
+.custompicker .pickertitle{
+  font-size: 30rpx;
+  line-height: 100rpx;
+  color: #333;
+  font-weight: 600;
+}
+.custompicker .pickercancel{
+  font-size: 30rpx;
+  line-height: 100rpx;
+  color: #333;
+  cursor: pointer;
+}
+.custompicker .pickeritems{
+  width: 100%;
+  overflow: hidden;
+}
+.custompicker .pickeritemswrap{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+
+
+
+
+.custompicker .rechargeitem{
+  width: 100%; 
+  height: 100rpx;
+}
+.custompicker .rechargeitem .rechargeitemwrap{
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #eee;
+}
+.custompicker .rechargeitem .rechargeitemwrap .typeicon{
+  width: 46rpx;
+  height: 46rpx;
+  margin-top: 27rpx;
+}
+.custompicker .rechargeitem .rechargetypename{
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  color: #131426;
+  text-align: left;
+  line-height: 100rpx;
+}
+.custompicker .rechargeitem .selecticon{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+}
+
+
+
+.custompicker .gratuityitem{
+  width: 26%;
+  margin-left: 5.5%;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 60rpx;
+  color: #333;
+  font-weight: 400;
+  font-size: 30rpx;
+  height: 60rpx;
+  float: left;
+  margin-top: 30rpx;
+}
+.custompicker .gratuityitem.active{
+  border: 1px solid #FE8702;
+  color: #FE8702;
+}
+.custompicker .clearfloat{
+  clear: both;
+}
+.custompicker .customgratuity{
+  width: 89%;
+  margin-left: 5.5%;
+  height: 80rpx;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+}
+.custompicker .customtap{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  color: #333;
+  font-size: 28rpx;
+  border: 1px solid #999;
+  box-sizing: border-box;
+}
+.custompicker .customgratuityinput{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #FE8702;
+  box-sizing: border-box;
+}
+.custompicker .customgratuityinputtitle{
+  text-align: right;
+  color: #FE8702;
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+.custompicker input{
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  text-align: left;
+  color: #FE8702;
+  box-sizing: border-box;
+  text-indent: .2rem;
+}
+.custompicker .pickersub{
+  width: 80%;
+  margin-left: 10%;
+  height: 100rpx;
+  background-color: #0a0919;
+  line-height: 100rpx;
+  text-align: center;
+  font-size:34rpx;
+  border-radius: 10rpx;
+  color: white;
+  margin-top: 20rpx;
+}

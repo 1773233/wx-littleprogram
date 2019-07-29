@@ -1,0 +1,560 @@
+/* pages/placeorder/placeorder.wxss */
+.wraper{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing:border-box;
+  position: relative;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+  text-align: center;
+  padding: 0px;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+  text-align: center;
+  padding: 0px;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+  text-align: center;
+  padding: 0px;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+  text-align: center;
+  padding: 0px;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+  text-align: center;
+  padding: 0px;
+}
+.itemhf{
+  -webkit-box-flex:.5;
+  -webkit-flex:.5;
+  flex:.5;
+  text-align: center;
+  padding: 0px;
+}
+/*bottomwraperstart*/
+.wraper .bottomwraper{
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+/*bottomwraper信息列表*/
+.wraper .bottomwraper .detailposinfo{
+  width: 100%;
+  overflow: hidden;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+}
+.wraper .bottomwraper .detailposinfowrap{
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0px 15rpx;
+  padding-top: 20rpx;
+}
+.wraper .bottomwraper .goodtype{
+  width: 100%;
+  overflow: hidden;
+}
+.wraper .bottomwraper .typeitem{
+  height: 120rpx;
+  overflow: hidden;
+}
+.wraper .bottomwraper .itemwraper{
+  width: 60rpx;
+  height: 120rpx;
+  margin: 0 auto;
+}
+.wraper .bottomwraper .itemwraper image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.wraper .bottomwraper .itemwraper view{
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #333;
+  font-size: 26rpx;
+  overflow: hidden;
+}
+.wraper .bottomwraper .itemwraper view.colored{
+  color: #FE8702;
+}
+.wraper .bottomwraper .needmessage{
+  width: 100%;
+  height: 130rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+}
+.wraper .bottomwraper .needmessage textarea{
+  width: 100%;
+  height: 100%;
+  font-size: 24rpx;
+  color: #333;
+  box-sizing: border-box;
+  font-weight: lighter;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-top: 10rpx;
+}
+.wraper .bottomwraper .detailpositem{
+  height: 100rpx;
+  width: 100%;
+}
+.wraper .bottomwraper .detailpositem .active{
+  color: #333;
+}
+.wraper .bottomwraper .detailpositem.borderbot{
+  border-bottom: 1px solid #eee;
+}
+.wraper .bottomwraper .itemtitle{
+  font-size: 30rpx;
+  color: #333;
+  line-height: 100rpx;
+  text-align: left;
+  text-indent: .3rem;
+}
+.wraper .bottomwraper .itemcontent{
+  text-align: right;
+  line-height: 100rpx;
+  color: #999;
+  font-size: 28rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.wraper .bottomwraper .addresstip{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #999;
+  font-size: 30rpx;
+  text-align: right;
+}
+.wraper .bottomwraper .addressdetail{
+  width: 100%;
+  height: 100rpx;
+  position: relative;
+}
+.wraper .bottomwraper .addressdetail .ifcall{
+  position: absolute;
+  bottom: 10rpx;
+  left: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.wraper .bottomwraper .detailinfo{
+  width: 100%;
+  height: 50rpx;
+  color: #666;
+  font-size: 26rpx;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wraper .bottomwraper .detailinfo.infotop{
+  line-height: 60rpx;
+}
+.wraper .bottomwraper .detailinfo.infobot{
+  line-height: 40rpx;
+}
+.wraper .bottomwraper .itemcontent input{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: right;
+  color: #999;
+}
+.wraper .bottomwraper .detailposinfowrap .placeholder{
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+}
+/*bottomwraper信息列表end*/
+
+/*总计start*/
+.subtotal{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 99;
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px #eee;
+}
+.subtotal .moneysub{
+  font-size: 30rpx;
+  line-height: 100rpx;
+  text-indent: .5rem;
+}
+.subtotal .moneysub text{
+  color: red;
+  font-size: 36rpx;
+}
+.subtotal .pricedetail{
+  color: #333;
+  font-size: 30rpx;
+  line-height: 100rpx;
+}
+/* .subtotal .ordercomfirm{
+  width: 180rpx;
+  height: 80rpx;
+  float: right;
+  background-color: #999;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  color: white;
+  text-align: center;
+  line-height: 80rpx;
+} */
+.subtotal .fromidplace{
+  box-sizing: border-box;
+  padding-top: 10rpx;
+  padding-right: 20rpx;
+  position: relative
+}
+.subtotal .formidbtn{
+  width: 20rpx;
+  height: 20rpx;
+  float: left;
+  position: absolute;
+  top: 10rpx;
+  right: 20rpx;
+  background-color: transparent;
+}
+.subtotal .formidbtn::after{
+  border: none;
+}
+.subtotal .throughbtn{
+  width: 180rpx;
+  height: 80rpx;
+  background:#999;
+  position:fixed;
+  font-size: 30rpx;
+  color: white;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  bottom: 10rpx;
+  right: 20rpx;
+}
+.subtotal .throughbtn.valid{
+  background-color: #000;
+}
+/*总计end*/
+
+/*自定义选择器start*/
+.custompicker{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 996;
+  display: none;
+}
+.custompicker.showpicker{
+  display: block;
+}
+.custompicker .emptyarea{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 997;
+  background: rgba(0, 0, 0, 0.7);
+}
+.custompicker .pickerwraper{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: white;
+  transition: all 0.4s ease;
+  z-index: 999;
+  padding-bottom: 30rpx;
+}
+.custompicker .pickercontent{
+  width: 96%;
+  margin-left: 2%;
+  overflow: hidden;
+}
+.custompicker .title{
+  height: 100rpx;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+.custompicker .pickertitle{
+  font-size: 34rpx;
+  line-height: 100rpx;
+  color: #333;
+}
+.custompicker .pickercancel{
+  font-size: 30rpx;
+  line-height: 100rpx;
+  color: #333;
+}
+.custompicker .specialvalue{
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  color: #666;
+  font-size: 32rpx;
+  line-height: 100rpx;
+  box-sizing: border-box;
+  background-color: white;
+  position: relative;
+  z-index: 999;
+}
+.custompicker .pickeritems{
+  width: 100%;
+  overflow: hidden;
+}
+.custompicker .pickeritemswrap{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+.custompicker .rechargeitem{
+  width: 100%; 
+  height: 100rpx;
+}
+.custompicker .rechargeitem .rechargeitemwrap{
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #eee;
+}
+.custompicker .rechargeitem .rechargeitemwrap .typeicon{
+  width: 46rpx;
+  height: 46rpx;
+  margin-top: 27rpx;
+}
+.custompicker .rechargeitem .rechargetypename{
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  color: #131426;
+  text-align: left;
+  line-height: 100rpx;
+}
+.custompicker .rechargeitem .rechargetypename text{
+  color: #999;
+  font-size: 26rpx;
+}
+.custompicker .rechargeitem .rechargetypename text.highlight{
+  color: #FE8702;
+}
+.custompicker .rechargeitem .selecticon{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+}
+
+.custompicker .timepickercontent{
+  width: 100%; 
+  height: 200rpx;
+  margin-bottom: 20rpx;
+}
+.custompicker .gratuitypickercontent{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 2.5%;
+  overflow: hidden;
+}
+.custompicker .timepickeritem{
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #333;
+  height: 34px !important;
+  text-align: center;
+}
+.custompicker .gratuityitem{
+  width: 30%;
+  margin-right: 2.5%;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 80rpx;
+  color: #333;
+  font-weight: 400;
+  font-size: 30rpx;
+  height: 80rpx;
+  float: left;
+  margin-top: 30rpx;
+}
+.custompicker .gratuityitem.active{
+  border: 1px solid #FE8702;
+  color: #FE8702;
+}
+.clearfloat{
+  clear: both;
+}
+.custompicker .customgratuity{
+  width: 95%;
+  height: 80rpx;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+}
+.custompicker .customtap{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  color: #333;
+  font-size: 28rpx;
+  border: 1px solid #999;
+  box-sizing: border-box;
+}
+.custompicker .customgratuityinput{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #FE8702;
+  box-sizing: border-box;
+}
+.custompicker .customgratuityinputtitle{
+  text-align: right;
+  color: #FE8702;
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+.custompicker input{
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  text-align: left;
+  color: #FE8702;
+  box-sizing: border-box;
+  text-indent: .2rem;
+}
+.custompicker .pickersub{
+  width: 100%;
+  height: 100rpx;
+  background-color: #0a0919;
+  line-height: 100rpx;
+  text-align: center;
+  font-size:34rpx;
+  border-radius: 10rpx;
+  color: white;
+  margin-top: 20rpx;
+}
+/*送货时间选择器end*/
+.arrowright{
+  width: 12rpx;
+  height:26rpx;
+  margin-top: 28rpx;
+  float: right;
+  margin-right: 15rpx;
+}
+.arrowright image{
+  width: 100%;
+  height: 100%;
+}
+.hide{
+  display: none;
+}
+
+
+
+/* 支付密码css start */
+.paypwd{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  bottom: 0rpx;
+  left: 0rpx;
+  z-index: 9999;
+}
+.paypwd .bg_layer{
+  position: absolute; left: 0; top: 0; bottom: 0; right: 0;
+  background-color: rgba(0, 0, 0, 0.6); z-index: 9998;
+}
+.paypwd .input_main{
+    position: absolute; left: 0; bottom: 0rpx; width: 100%; height: 394rpx;
+    background-color: #fff; z-index: 9999;
+}
+.paypwd .input_title{
+    width: 100%; height: 90rpx; line-height: 90rpx; text-align: center; 
+    font-size: 32rpx; border-bottom: 1rpx solid #e2e2e2;
+}
+.paypwd .input_back{
+    position: absolute; left: 0; top: 0;
+    width: 80rpx; height: 90rpx; display: flex; justify-content: center; align-items: center;
+}
+.paypwd .input_back text{
+  width: 20rpx;
+  height: 20rpx;
+  background-color: white;
+  border: 1rpx solid #aaa;
+  border-width: 5rpx 0 0 5rpx;
+  transform: rotate(-45deg);
+}
+
+.paypwd .input_tip{  margin: 30rpx; font-size: 24rpx; color: #888; }
+
+/* 密码掩码模拟 */
+.paypwd .input_row{
+  width: 690rpx; margin: 0 auto; height: 98rpx; position: relative;
+  display: flex; align-items: center; border: 1rpx solid #e2e2e2; border-radius: 20rpx;
+}
+.paypwd .input_row .pwd_item{
+  flex: 1; display: flex; align-items: center; justify-content: center; 
+  height: 100%; border-right: 1rpx solid #e2e2e2; position: relative;
+}
+.paypwd .pwd_item:nth-last-of-type(1) { border-right: 0; } 
+.paypwd .pwd_item text { 
+  width: 30rpx; height: 30rpx; border-radius: 30rpx; background-color: #555;
+}
+.paypwd .forget_pwd{
+  width: 100%; 
+  margin: 30rpx;
+  box-sizing: border-box;
+  padding-right: 50rpx;
+  font-size: 24rpx; 
+  position: relative;
+  border: 1rpx solid transparent;
+}
+.paypwd .forget_pwd .pwdtipinfo{
+  float: left;
+  color: #ec2126;
+}
+.paypwd .forget_pwd .forget{
+  float: right;
+  color: #ff7800;
+}
+/* 文本输入框位置: 设置到中间隐藏 */
+.paypwd .input_control { 
+  position: absolute; left:-250%; top:186rpx; width: 500%; height:100rpx;
+  background-color: transparent;
+  visibility: hidden;
+  opacity: 0;
+} 

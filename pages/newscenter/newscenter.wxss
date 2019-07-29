@@ -1,0 +1,97 @@
+/* pages/newscenter/newscenter.wxss */
+.wraper{
+  width: 100%;
+  overflow: hidden;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+  text-align: center;
+  padding: 0px;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+  text-align: center;
+  padding: 0px;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+  text-align: center;
+  padding: 0px;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+  text-align: center;
+  padding: 0px;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+  text-align: center;
+  padding: 0px;
+}
+.wraper .newsitem{
+  height: 160rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+}
+.wraper .avatar{
+  width: 100%;
+  height: 160rpx;
+  text-align: center;
+}
+.wraper .avatar image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin-top: 20rpx;
+}
+.wraper .name{
+  width: 100%;
+  height: 80rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #333;
+  text-align: left;
+  font-family: "黑体";
+}
+.wraper .desc{
+  width: 100%;
+  max-width: 400rpx;
+  color: #999;
+  text-align: left;
+  height: 80rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.wraper .date{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+  font-family: "黑体";
+}
+.wraper .number{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background-color: red;
+  font-size: 24rpx;
+  color:#FFF;
+  text-align: center;
+  line-height: 40rpx;
+  margin: 0 auto;
+}

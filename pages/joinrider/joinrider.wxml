@@ -1,0 +1,10 @@
+<!--pages/joinrider/joinrider.wxml-->
+<view class='wraper'>
+  <view class='back'>
+    <image wx:if="{{switched}}" src='/images/r1.png'></image>
+    <view class='webwrap' wx:else>
+      <web-view class='webcontent' src="{{downurl}}"></web-view>
+    </view>
+  </view>
+  <view wx:if="{{switched}}" class='joinus' bindtap='switchback'>立即加入</view>
+</view>

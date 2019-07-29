@@ -1,0 +1,7 @@
+<!--pages/sharecallback/sharecallback.wxml-->
+<view class='wraper'>
+  <view class='webwrap'>
+    <web-view src="{{theurl}}"></web-view>
+  </view>
+</view>
+

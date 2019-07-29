@@ -1,0 +1,50 @@
+<!--pages/cashout/cashout.wxml-->
+<template name="moneydetail">
+    <view class='detailitem'>
+        <view class='weui-flex'>
+            <view class='weui-flex__item'>
+                <view class='date'>{{create_time}}</view>
+            </view>
+            <view class='weui-flex__item'>
+                <view class='status' wx:if="{{status==1}}">待审核</view>
+                <view class='status' wx:elif="{{status==2}}">提现成功</view>
+                <view class='status' wx:else>审核失败</view>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item'>
+                <view class='itemtitle'>持有人姓名:<text>{{holder}}</text></view>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item'>
+                <view class='itemtitle'>提现银行:<text>{{ban_name}}</text></view>
+            </view>
+            <view class='weui-flex__item'>
+                <view class='exprice'>￥{{price}}</view>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='item2'>
+                <view class='itemtitle'>银行卡号:<text>{{bank_num}}</text></view>
+            </view>
+            <view class='weui-flex__item'>
+                <view class='realprice'>￥{{real_price}}</view>
+            </view>
+        </view>
+        <view class='weui-flex' wx:if="{{status==3}}">
+            <view class='weui-flex__item'>
+                <view class='reson'>未审核通过的原因:{{reason}}</view>
+            </view>
+        </view>
+    </view>
+</template>
+<view class='wraper'>
+    <block wx:for="{{cashoutdetail}}" wx:key="{{item.id}}">
+        <template is="moneydetail" data="{{...item}}"></template>
+    </block>
+    <view class='nodata' wx:if="{{cashoutdetail.length==0}}">
+      <image src='/images/nodata.png'></image>
+      <view class='tipinfo'>暂无数据</view>
+    </view>
+</view>

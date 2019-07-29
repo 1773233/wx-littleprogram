@@ -1,0 +1,71 @@
+<!--pages/userinfo/userinfo.wxml-->
+<view class='wraper'>
+    <view class='funcionwrap'>
+        <view class='weui-flex headavatar'>
+            <view class='weui-flex__item title item6'>
+                头像
+            </view>
+            <view class='weui-flex__item item6'>
+                <image class='useravatar' src='{{userinfo.avatar==null?"/images/logo.png":userinfo.avatar}}'></image>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item item6 title'>
+                {{startchangename?"修改昵称":"昵称"}}
+            </view>
+            <view class='weui-flex__item item6'>
+               <view wx:if="{{!startchangename}}" class='infovalue' bindtap='changeusername'>{{userinfo.name==null?"518快运":userinfo.name}}</view>
+               <input wx:if="{{startchangename}}" focus="true" class='infovalue' bindblur='usernamechanged' bindinput='usernameinput' type='text' placeholder-class='highlight' placeholder="请输入新的昵称"></input>
+            </view>
+            <view class='weui-flex__item'>
+                <!-- <view class='arrowright'>
+                    <image src="/images/arrowright.png"></image>
+                </view> -->
+            </view>
+        </view>
+        <view class='weui-flex bordernone'>
+            <view class='weui-flex__item item6 title'>
+                绑定手机
+            </view>
+            <view class='weui-flex__item item6'>
+               <view class='infovalue'>{{userinfo.tel}}</view>
+            </view>
+            <view class='weui-flex__item'>
+            </view>
+        </view>
+        <view class='weui-flex bordernone' bindtap='changepassword'>
+            <view class='weui-flex__item item6 title'>
+                修改支付密码
+            </view>
+            <view class='weui-flex__item item6'>
+            </view>
+            <view class='weui-flex__item'>
+                <view class='arrowright'>
+                    <image src="/images/arrowright.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item item6 title'>
+                实名认证
+            </view>
+            <view class='weui-flex__item item6'>
+                <view class='infovalue' bindtap='torealname'>
+                    <text class='userconfirm' wx:if="{{identitystatus==0}}">未认证</text>
+                    <text class='userconfirm' wx:if="{{identitystatus==1}}">审核中</text>
+                    <text class='userconfirm' wx:if="{{identitystatus==2}}">已认证</text>
+                    <text class='userconfirm' wx:if="{{identitystatus==3}}">未认证</text>
+                </view>
+            </view>
+            <view class='weui-flex__item' bindtap='torealname'>
+                <view class='arrowright'>
+                    <image src="/images/arrowright.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='btn'>
+        <view class="save" wx:if="{{startchangename}}" bindtap='savechange'>保存</view>
+    </view>
+</view>
+

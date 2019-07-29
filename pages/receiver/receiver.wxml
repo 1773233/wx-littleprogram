@@ -1,0 +1,34 @@
+<!--pages/receiver/receiver.wxml-->
+<view class='wraper'>
+    <view class='content'>
+        <view class='title'>
+            完善购买地址信息
+        </view>
+        <view class='infowraper'>
+            <view class='weui-flex infoitem' bindtap='toaddressselect'>
+                <view class='weui-flex__item'>
+                    <view class='circle'>
+                        <image src='/images/redicon.png'></image>
+                    </view>
+                </view>
+                <view class='weui-flex__item item6 itemcontent {{address==null?"gray":""}}'>{{address==null?"选择购买地址":address}}</view>
+                <view class='weui-flex__item'>
+                    <view class='arrowright'>
+                        <image src='/images/arrowright.png'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='weui-flex infoitem'>
+                <view class='weui-flex__item itemicon'>
+                    <image src='/images/floor.png'></image>
+                </view>
+                <view class='weui-flex__item item6 itemcontent'>
+                    <input type='text' placeholder-class='holderstyle' placeholder='名称，单元，楼层，门牌号' bindinput='addressdetailinput' value='{{addressdetail}}'></input>
+                </view>
+                <view class='weui-flex__item'>
+                </view>
+            </view>
+        </view>
+        <view class='subbtn' bindtap='confirmaddress'>确定</view>
+    </view>
+</view>

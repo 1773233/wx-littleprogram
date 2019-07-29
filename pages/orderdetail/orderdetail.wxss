@@ -1,0 +1,486 @@
+/* pages/orderdetail/orderdetail.wxss */
+.wraper{
+  width: 100%;
+  overflow: hidden;
+  box-sizing:border-box;
+  padding-bottom: 20rpx;
+  background-color: #F5F5F5;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+  text-align: center;
+  padding: 0px;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+  text-align: center;
+  padding: 0px;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+  text-align: center;
+  padding: 0px;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+  text-align: center;
+  padding: 0px;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+  text-align: center;
+  padding: 0px;
+}
+.item7{
+  -webkit-box-flex:7;
+  -webkit-flex:7;
+  flex:7;
+  padding: 0px;
+}
+.item8{
+  -webkit-box-flex:8;
+  -webkit-flex:8;
+  flex:8;
+}
+.wraper .detailitem{
+  width: 94%;
+  margin-left: 3%;
+  height: auto;
+  background-color:#fff;
+  margin-top: 20rpx;
+  padding-bottom:20rpx;
+}
+.wraper .detailitem .orderstate{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #000;
+}
+.wraper .detailitem .tips{
+  font-size: 26rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  color: #999;
+  text-align: center;
+  width: 100%;
+}
+.wraper .detailitem  .controlls{
+  height: 100rpx;
+  width: 100%;
+  overflow: hidden;
+}
+.wraper .detailitem .ordercontroll{
+  width: 200rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  border: 1px solid #ddd;
+  color: #555;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  cursor: pointer;
+  text-align: center;
+  margin: 20rpx auto;
+}
+.wraper .detailitem .ordercontroll.fullcolor{
+  background-color: #fe8702;
+  border: none;
+  color: #fff;
+}
+.wraper .detailitem .spliter{
+  width: 100%;
+  height: 40rpx;
+  position: relative;
+}
+.wraper .detailitem .edge{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background-color: #f5f5f5;
+  position: absolute;
+  top: 0px;
+}
+.wraper .detailitem .edge.left{
+  left: -20rpx;
+}
+.wraper .detailitem .edge.right{
+  right: -20rpx;
+}
+.wraper .detailitem .dashedline{
+  width: 100%;
+  height: 20rpx;
+  border-bottom: 1rpx dotted #eee;
+}
+.wraper .detailitem .sender{
+  width: 100%;
+  height: 120rpx;
+}
+.wraper .detailitem .sender .avatar{
+  height: 120rpx;
+  text-align: center;
+}
+.wraper .detailitem .sender .avatar image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+}
+.wraper .detailitem .senderinfo{
+  width: 100%;
+  height: 60rpx;
+  padding-left: 20rpx;
+  text-align: left;
+}
+.wraper .detailitem .senderinfo text{
+  line-height: 80rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #444;
+}
+.wraper .detailitem .satisfiction{
+  width: 100%;
+  height: 6rpx;
+  text-align: left;
+  padding-left: 20rpx;
+}
+.wraper .detailitem .satisfiction text{
+  line-height: 40rpx;
+  color: #999;
+  font-size: 32rpx;
+}
+.wraper .detailitem .call{
+  height: 120rpx;
+  width: 100%;
+  text-align: center;
+}
+.wraper .detailitem .call image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  margin-top: 30rpx;
+}
+.wraper .detailitem.addressinfo{
+  padding-top: 20rpx;
+}
+.wraper .detailitem.addressinfo .item8{
+  padding-right: 20rpx;
+}
+.wraper .detailitem .personinfowrap{
+  height: 60rpx;
+}
+.wraper .detailitem .personinfowrap .item8{
+  padding-right: 20rpx;
+}
+.wraper .detailitem .persicon{
+  height: 60rpx;
+  text-align: center;
+}
+.wraper .detailitem .persicon image{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  margin-top: 15rpx
+}
+.wraper .detailitem .personname{
+  color: #333;
+  font-weight: bold;
+  font-size: 28rpx;
+  width: 100%;
+  line-height: 4rpx;
+  height: 40rpx;
+  display: inline-block;
+}
+.wraper .detailitem .personinfo{
+  color: #999;
+  font-size: 28rpx;
+  width: 100%;
+  line-height: 40rpx;
+  height: auto;
+  display: inline-block;
+}
+.wraper .detailitem .point{
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 6rpx;
+  background-color:#ff6733;
+}
+.wraper .detailitem .goodstitle{
+  color: #666;
+  font-size: 28rpx;
+  margin-left: 15rpx;
+}
+.wraper .detailitem .textleft{
+  text-align: left;
+  padding-left: 30rpx;
+  padding-top: 10rpx;
+}
+.wraper .detailitem .textright{
+  text-align: right;
+  padding-right: 30rpx;
+  padding-top: 10rpx;
+}
+.wraper .detailitem .orderpricetitle{
+  color: #999;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  display: inline-block;
+}
+.wraper .detailitem .typevalue{
+  color: red;
+  font-size: 26rpx;
+  line-height:50rpx;
+}
+.wraper .detailitem.otherinfo{
+  padding-top: 20rpx;
+}
+.wraper .detailitem .orderdetailinfo{
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: left;
+  color: #999;
+  font-size: 26rpx;
+  padding-left: 30rpx;
+}
+.wraper .commentlist .titleinfo{
+  height: 100rpx;
+}
+.wraper .commentlist .titleinfo .useravatar{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  border-radius: 30rpx;
+  float: left;
+}
+.wraper .commentlist .titleinfo .uname{
+  line-height: 100rpx;
+  font-size: 30rpx;
+  max-width: 240rpx;
+  height: 100rpx;
+  margin-left: 5rpx;
+  display: block;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wraper .commentlist .starlist{
+  width: 100%;
+  height: 40rpx;
+  margin-top: 20rpx;
+}
+.wraper .commentlist .starlist image{
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+  margin-left: 10rpx;
+}
+.wraper .commentlist .titleinfo .commenttime{
+  text-align: right;
+  font-size: 24rpx;
+  line-height: 100rpx;
+  padding-right: 10rpx;
+  color: #999;
+}
+.wraper .commentlist .content{
+  width: 100%;
+  height: auto;
+}
+.wraper .commentlist .commentwords{
+  width: 100%;
+  height: auto;
+  font-size: 28rpx;
+  line-height: 30rpx;
+  padding: 10rpx;
+  color: #666;
+}
+.wraper .commentlist .images{
+  width: 100%;
+  height: auto;
+  padding: 10rpx;
+}
+.wraper .commentlist .images .commentimage{
+  float: left;
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+}
+.wraper .picjudgetitle{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: left;
+  font-size: 28rpx;
+  color:#999;
+  text-indent: 30rpx;
+}
+.wraper .judgepicwrap{
+  width: 100%;
+  height: auto;
+  padding-left: 7%;
+}
+.wraper .judgepicwrap .picjudgeitem{
+  width: 24%;
+  max-height: 160rpx;
+  margin-right: 7%;
+  margin-top: 10rpx;
+  border-radius: 5rpx;
+}
+.nopadding{
+  padding: 0rpx;
+}
+.clearfloat{
+  clear: both;
+}
+.logs{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+}
+.hide{
+  display: none;
+}
+.emptyarea{
+  background-color: rgba(10,10,10,.6);
+  width: 100%;
+  height: 50vh;
+}
+.logscontent{
+  width: 100%;
+  height: 50vh;
+  background-color: #fff;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.title{
+  height: 100rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #eee;
+}
+.title .pickertitle{
+  color: #333;
+  font-size: 34rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.title .pickercancel{
+  font-size: 32rpx;
+  color: #131426;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.logsvalue{
+  width: 100%;
+  height: auto;
+}
+.logsvalue .logitem{
+  width: 100%;
+  height: 100rpx;
+}
+.borderleft{
+  height: 100rpx;
+  position: relative;
+}
+.borderleft.active{
+  overflow: hidden;
+}
+.logsvalue .logitem .point{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  margin-left: -18rpx;
+  z-index: 999;
+  background-color: #f1f1f1;
+}
+.borderleft .line{
+  position: absolute;
+  width: 50%;
+  margin-left: 50%;
+  top: -50rpx;
+  left: 0rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+  z-index: 99;
+  border-left: 1px dashed #ddd;
+}
+.borderleft .line.active{
+  border: none;
+}
+.logsvalue .logitem .point.active{
+  background-color:#131426;
+}
+.logsvalue .logitem .titlelog{
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 30rpx;
+  text-align: left;
+  font-weight: bold;
+  text-indent: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.logsvalue .logitem .time{
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #999;
+  font-size: 30rpx;
+  text-align: center;
+}
+.nodata{
+  width: 100%;
+  height: 40vh;
+  line-height: 40vh;
+  color: #333;
+  font-size: 30rpx;
+  text-align: center;
+}
+.backtohome{
+  width: 80rpx;
+  height: 150rpx;
+  background-color: transparent;
+  position: fixed;
+  right: 10rpx;
+  bottom: 100rpx;
+}
+.backtohome .Triangletop{
+  width: 0rpx;
+  height: 0rpx;
+  border-bottom: 40rpx solid #131426;
+  border-left: 40rpx solid transparent;
+  border-right: 40rpx solid transparent;
+}
+.backtohome .Trianglebody{
+  width: 100%;
+  height: 70rpx;
+  background-color:#131426;
+  font-size: 28rpx;
+  color: #fff;
+  font-weight: bold;
+  line-height: 70rpx;
+  text-align: center;
+}
+
+

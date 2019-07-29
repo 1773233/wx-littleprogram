@@ -1,0 +1,49 @@
+<!--pages/newscenter/newscenter.wxml-->
+<view class='wraper'>
+    <view class='weui-flex newsitem' bindtap='tosysmsglist'>
+        <view class='weui-flex__item'>
+            <view class='avatar'>
+                <image src='/images/msg1.png'></image>
+            </view>
+        </view>
+        <view class='weui-flex__item item3'>
+            <view class='name'>
+                系统消息
+            </view>
+            <view class='desc'>
+              {{sysmessagecontent==null?"暂无消息":sysmessagecontent}}
+            </view>
+        </view>
+        <view class='weui-flex__item'>
+            <view class='date' wx:if="{{syscreatime!=null}}">
+            {{syscreatime}}
+            </view>
+            <view class='number' wx:if="{{sysmessagecount!=0}}">
+                {{sysmessagecount}}
+            </view>
+        </view>
+    </view>
+    <view class='weui-flex newsitem' bindtap='toordermsglist'>
+        <view class='weui-flex__item'>
+            <view class='avatar'>
+                <image src='/images/msg2.png'></image>
+            </view>
+        </view>
+        <view class='weui-flex__item item3'>
+            <view class='name'>
+                订单消息
+            </view>
+            <view class='desc'>
+              {{ordermessagecontent==null?"暂无消息":ordermessagecontent}}
+            </view>
+        </view>
+        <view class='weui-flex__item'>
+            <view class='date' wx:if="{{ordercreatetime!=null}}">
+            {{ordercreatetime}}
+            </view>
+            <view class='number' wx:if="{{ordermessagecount!=0}}">
+                {{ordermessagecount}}
+            </view>
+        </view>
+    </view>
+</view>

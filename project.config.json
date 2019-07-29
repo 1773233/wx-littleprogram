@@ -1,0 +1,248 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "wx480084d629a0ffb3",
+	"projectname": "518%E5%BF%AB%E8%BF%90",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录授权",
+					"pathName": "pages/getuserinfo/getuserinfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "优惠券",
+					"pathName": "pages/discount/discount",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "下单",
+					"pathName": "pages/placeorder/placeorder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购买地址",
+					"pathName": "pages/receiver/receiver",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑地址",
+					"pathName": "pages/sender/sender",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/myorder/myorder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "余额",
+					"pathName": "pages/wallet/wallet",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "余额明细",
+					"pathName": "pages/moneydetail/moneydetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/getmoney/getmoney",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "成为游侠",
+					"pathName": "pages/joinrider/joinrider",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/setting/setting",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享",
+					"pathName": "pages/share/share",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享奖励",
+					"pathName": "pages/shareprize/shareprize",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址选择",
+					"pathName": "pages/addressselect/addressselect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "用户信息",
+					"pathName": "pages/userinfo/userinfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请发票",
+					"pathName": "pages/invoiceapply/invoiceapply",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/orderdetail/orderdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加银行卡",
+					"pathName": "pages/amounttomoney/amounttomoney",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现明细",
+					"pathName": "pages/cashout/cashout",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "消息中心",
+					"pathName": "pages/newscenter/newscenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择城市",
+					"pathName": "pages/cityselect/cityselect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "实名认证",
+					"pathName": "pages/realname/realname",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "pages/addressmanage/addressmanage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改密码",
+					"pathName": "pages/changepassword/changepassword",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/comment/comment",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请发票",
+					"pathName": "pages/invoicemanage/invoicemanage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请历史",
+					"pathName": "pages/invoicehistory/invoicehistory",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "帮助",
+					"pathName": "pages/help/help",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "游侠主页",
+					"pathName": "pages/riderdetail/riderdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "取消原因",
+					"pathName": "pages/cancelreson/cancelreson",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "费用明细",
+					"pathName": "pages/pricedetail/pricedetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "计价标准",
+					"pathName": "pages/pricerule/pricerule",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享回调",
+					"pathName": "pages/sharecallback/sharecallback",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "管理银行卡",
+					"pathName": "pages/cardmanage/cardmanage",
+					"query": ""
+				}
+			]
+		}
+	}
+}

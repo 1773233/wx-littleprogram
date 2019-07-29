@@ -1,0 +1,195 @@
+<!--index.wxml-->
+<view class="wraper">
+    <view class='usercenter' wx:if="{{pageactive}}">
+        <view class='usercentermenu'>
+            <image class='usercenterback'  src='/images/bg.png'></image>
+            <view class='avatarname' bindtap='touserinfo'>
+                <image class='avatar' src='{{userinfo.avatar==null?"/images/logo.png":userinfo.avatar}}'></image>
+                <view class='username'>
+                  {{userinfo.name==null?"518快运":userinfo.name}}
+                </view>
+            </view>
+            <view class='userinfoshortcut weui-flex'>
+                <view class='weui-flex__item' bindtap='tomywallet'>
+                    <view class='itemvalue'>
+                      <view class='bigmoney'>{{moneybig}}</view>
+                      <view class='smallmoney'>{{moneysmall}}</view>
+                    </view>
+                    <view class='itemtitle'>余额</view>
+                </view>
+                <view class='weui-flex__item' bindtap='todiscount'>
+                    <view class='itemvalue'>{{ticketcount}}</view>
+                    <view class='itemtitle'>优惠券</view>
+                </view>
+            </view>
+            <view class='funcrmenu'>
+                <view class='funcmenuitem weui-flex' bindtap='tomyorder'>
+                    <view class='weui-flex__item item3'>
+                        <image class='itemicon' src='/images/fk.png'></image>
+                    </view>
+                    <view class='itemname weui-flex__item item6'>我的订单</view>
+                </view>
+                <view class='funcmenuitem weui-flex' bindtap='tomywallet'>
+                    <view class='weui-flex__item item3'>
+                        <image class='itemicon' src='/images/bag.png'></image>
+                    </view>
+                    <view class='itemname weui-flex__item item6'>我的钱包</view>
+                </view>
+                <!-- <view class='funcmenuitem weui-flex' bindtap='tomyaddress'>
+                    <view class='weui-flex__item item3'>
+                        <image class='itemicon' src='/images/dz.png'></image>
+                    </view>
+                    <view class='itemname weui-flex__item item6'>我的地址</view>
+                </view> -->
+                <view class='funcmenuitem weui-flex' bindtap='toshare'>
+                    <view class='weui-flex__item item3'>
+                        <image class='itemicon' src='/images/share.png'></image>
+                    </view>
+                    <view class='itemname weui-flex__item item6'>我的分享</view>
+                </view>
+                <view class='funcmenuitem weui-flex' bindtap='todiscount'>
+                    <view class='weui-flex__item item3'>
+                        <image class='itemicon' src='/images/yhq.png'></image>
+                    </view>
+                    <view class='itemname weui-flex__item item6'>我的优惠券</view>
+                </view>
+                <view class='funcmenuitem weui-flex' bindtap='becomerider'>
+                    <view class='weui-flex__item item3'>
+                        <image class='itemicon' src='/images/cz.png'></image>
+                    </view>
+                    <view class='itemname weui-flex__item item6'>成为游侠</view>
+                </view>
+                <view class='funcmenuitem weui-flex' bindtap='tosetting'>
+                    <view class='weui-flex__item item3'>
+                        <image class='itemicon' src='/images/set.png'></image>
+                    </view>
+                    <view class='itemname weui-flex__item item6'>设置</view>
+                </view>
+                <view class='funcmenuitem weui-flex' bindtap='tohelp'>
+                    <view class='weui-flex__item item3'>
+                        <image class='itemicon' src='/images/help.png'></image>
+                    </view>
+                    <view class='itemname weui-flex__item item6'>帮助</view>
+                </view>
+            </view>
+        </view>
+        <!-- <view class='emptyarea' bindtap='hideusercenter'></view> -->
+    </view>
+    <view wx:if="{{pageactive}}" class='map {{usercenteractive==true?"":"showuc"}}'>
+        <map id="map" scale="{{mapscale}}" longitude="{{longitude}}" show-location="true" latitude="{{latitude}}" markers='{{markers}}' bindregionchange="regionchange">
+            <cover-view class='topwraper'>
+                <cover-view class='weui-flex'>
+                    <cover-view class='weui-flex__item' bindtap='activeusercenter'>
+                        <cover-view class='mine tapwidthcion'>
+                            <cover-image src='/images/mine.png'></cover-image>
+                        </cover-view>
+                    </cover-view>
+                    <cover-view class='weui-flex__item item4'>
+                        <cover-view class='citylocation' bindtap='tocityselectpage'>
+                            <cover-view class='cityicon'>
+                                <cover-image src='/images/locat.png'></cover-image>
+                            </cover-view>
+                            <cover-view class='cityname'>{{userlocationcity}}</cover-view>
+                            <cover-view class='arrowdown'>
+                                <cover-image src='/images/sj.png'></cover-image>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                    <cover-view class='weui-flex__item'>
+                        <cover-view class='message tapwidthcion' bindtap='tonewscenter'>
+                            <cover-image src="{{hasmessage?'/images/messagehas.png':'/images/message.png'}}"></cover-image>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view class="userlocation">
+                <cover-image class="img" src="{{descCVswitch=='hide'?'/images/area2.png':'/images/area1.png'}}" />
+            </cover-view>
+            <cover-view class="mappointinfo {{descCVswitch}}">
+                <cover-image class='pointinfoback' src='/images/ert.png'></cover-image>
+                <cover-view class='pointinfotextwrap'>
+                    <cover-view class='pointinfotext'>{{descCVinfo}}</cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view class="getlocation" bindtap="loclocation">
+                <cover-image class="img" src="/images/ffff.png" />
+            </cover-view>
+            <cover-view class='mapbotwrap'>
+                <cover-image class='mapbotback' src='/images/u50.png'></cover-image>
+                <cover-view class='menu'>
+                    <cover-view class='tap {{tapactive==true?"active":""}}' id="send" data-value="{{servicetype[0].id}}" bindtap='menuswitch'>{{servicetype[0].title}}</cover-view>
+                    <cover-view class='tap {{tapactive==true?"":"active"}}' id='buy' data-value="{{servicetype[1].id}}" bindtap='menuswitch'>{{servicetype[1].title}}</cover-view>
+                    <cover-view class='clearboth'></cover-view>
+                    <cover-view class='tapplaceholder sendholder {{tapactive==true?"active":""}}'></cover-view>
+                    <cover-view class='tapplaceholder buyholder {{tapactive==true?"":"active"}}'></cover-view>  
+                </cover-view>
+                <cover-view class='posdisplay'>
+                    <cover-view class='addresswrap weui-flex' bindtap='activesendinputform'>
+                        <cover-view class='weui-flex__item'>
+                            <cover-view class='addressicon'>
+                                <cover-image src='/images/greenicon.png'></cover-image>
+                            </cover-view>
+                        </cover-view>
+                        <cover-view class='weui-flex__item item6'>
+                            <cover-view wx:if="{{!sendPosinfoSwitch}}" class='addresscontent'>{{frompos}}</cover-view>
+                            <cover-view wx:else>
+                                <cover-view class='detailinfo infotop'>{{selectedSendPosinfo.address}}</cover-view>
+                                <cover-view class='detailinfo infobot'>
+                                    {{selectedSendPosinfo.sender}}  {{selectedSendPosinfo.tel}}
+                                </cover-view>
+                            </cover-view>
+                        </cover-view>
+                        <cover-view class='weui-flex__item'>
+                            <cover-view class='arrowright'>
+                                <cover-image src="/images/arrowright.png"></cover-image>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                    <cover-view class='placeholder'></cover-view>
+                    <cover-view class='addresswrap weui-flex' bindtap='toreceiverinfo'>
+                          <cover-view class='weui-flex__item'>
+                              <cover-view class='addressicon'>
+                                  <cover-image src='/images/redicon.png'></cover-image>                          
+                              </cover-view> 
+                          </cover-view>
+                          <cover-view class='weui-flex__item item6'>
+                              <cover-view wx:if="{{!getposselected}}" class='addresscontent'>{{topos}}</cover-view>
+                              <cover-view wx:else>
+                                  <cover-view class='detailinfo infotop'>{{getpos.name}}</cover-view>
+                                  <cover-view class='detailinfo infobot'>{{getpos.address}}</cover-view>
+                              </cover-view>
+                          </cover-view>
+                          <cover-view class='weui-flex__item'>
+                              <cover-view class='arrowright'>
+                                  <cover-image src="/images/arrowright.png"></cover-image>
+                              </cover-view>
+                          </cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view class='adwrap'>
+              <cover-image class='back' src='/images/xz.png'></cover-image>
+              <cover-view class='adinfo'>{{adticket}}</cover-view>
+              <cover-view wx:if="{{adticketid!=null}}" class='adbtn' bindtap='gettheticket'>点击领取</cover-view>
+            </cover-view>
+            <cover-view class="mapbackcover {{usercenteractive==true?'hide':''}}" bindtap='hideusercenter'>
+            </cover-view>
+            <cover-view class="hideusercenter {{usercenteractive==true?'hide':''}}" bindtap='hideusercenter'>
+                <cover-image class="img" src="/images/fffggg.png" />
+            </cover-view>
+        </map>
+    </view>
+    <view wx:if="{{pageactive==false}}">
+      <view class='logtitle'>
+        <image src='/images/logo.png'></image>
+        <view class='logappname'>五一八快运</view>
+        <view class='logtips'>{{tipmessage}}</view>
+      </view>
+      <view class="loguserinfo" wx:if="{{hasuserinfo==false}}">
+        <button class='loggetuserinfo' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 确认授权并登录 </button>
+      </view>
+      <view class="loguserinfo" wx:else>
+        <button wx:if="{{isgeting==false}}" class='loggetuserinfo' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> 授权绑定手机号 </button>
+      </view>
+    </view>
+</view>

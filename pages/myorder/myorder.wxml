@@ -1,0 +1,235 @@
+<!--pages/myorder/myorder.wxml-->
+<template name="orderitem">
+    <view class='orderitemwrap' id='{{id}}' bindtap='toorderdetail'>
+          <view class='title weui-flex'>
+              <view class='weui-flex__item item2'>
+                  <view class='ordertype'>
+                      <view class='servicetype'>{{servicetype==1?"帮我送":"帮我买"}}</view>
+                      <view class='abouttime'>
+                        <image src="/images/timer.png"></image>
+                        <text>预约时间:{{taketime}}</text>
+                      </view>
+                  </view>
+              </view>
+              <view class='weui-flex__item money'>
+                  <view class='moneytotal'>￥{{cost}}</view>
+                  <view class='mstatus'>{{orderstate}}</view>
+              </view>
+          </view>
+          <view class='spliter'>
+              <view class='edge left'></view>
+              <view class='dashedline'></view>
+              <view class='edge right'></view>
+          </view>
+          <view class='addressinfo'>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item'>
+                      <view class='addressicon'>
+                          <image src='{{servicetype==1?"/images/ji.png":"/images/mai.png"}}'></image>
+                      </view>
+                  </view>
+                  <view class='weui-flex__item item6 flexwrap'>
+                      <view class='addressdetail'>
+                        <view class='addresstop'>{{send_name==null?"需求:":send_name}} {{send_mobile==null?requirement_info:'（'+send_mobile+')'}}</view>
+                        <view class='addressbot'>{{fromaddress}} {{fromdetail==null?"":fromdetail}}</view>
+                      </view>
+                  </view>
+              </view>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item'>
+                      <view class='addressicon'>
+                          <image src='/images/shou.png'></image>
+                      </view>
+                  </view>
+                  <view class='weui-flex__item item6 flexwrap'>
+                      <view class='addressdetail'>
+                        <view class='addresstop'>{{receiver_name}} ({{receiver_mobile}})</view>
+                        <view class='addressbot'>{{toaddress}} {{todetail==null?"":todetail}}</view>
+                      </view>
+                  </view>
+              </view>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item message'>
+                      备注：<text wx:if="{{message==''}}">无</text>
+                      <text wx:elif="{{message==null}}">无</text>
+                      <text wx:else>{{message}}</text>
+                  </view>
+              </view>
+              <view class='weui-flex' wx:if="{{goods_weight!=null}}">
+                  <view class='weui-flex__item message'>
+                      重量：<text>{{goods_weight}}</text>
+                  </view>
+              </view>
+          </view>
+          <view class='spliter'>
+              <view class='edge left'></view>
+              <view class='dashedline'></view>
+              <view class='edge right'></view>
+          </view>
+          <view class='orderstate'>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item orderdate'>
+                      <view class='gratutity' wx:if="{{gratutity!=0}}">小费:{{gratutity}}元</view>
+                  </view>
+                  <view class='weui-flex__item' wx:if="{{orderstate=='待评价'}}">
+                      <view class='controlbtn fullcolor' data-value="{{ordernum}}" id='{{id}}' catchtap='tocomment'>
+                          评价
+                      </view>
+                      <view class='controlbtn fullcolor' data-value="{{ordernum}}" id='{{id}}' catchtap='deletorder'>
+                          删除
+                      </view>
+                  </view>
+                  <view class='weui-flex__item' wx:elif="{{orderstate=='已取消'}}">
+                      <view class='controlbtn {{btntype}}' data-value="{{ordernum}}" id='{{id}}' catchtap='deletorder'>
+                          删除
+                      </view>
+                  </view>
+                  <view class='weui-flex__item' wx:elif="{{orderstate=='待接单'}}">
+                      <view class='controlbtn {{btntype}}' data-value="{{ordernum}}" id='{{id}}' catchtap='cancelorder'>
+                          取消
+                      </view>
+                  </view>
+                  <view class='weui-flex__item' wx:elif="{{orderstate=='进行中'}}">
+                      <view class='controlbtn {{btntype}}' data-value="{{ordernum}}" id='{{id}}'>
+                          进行中
+                      </view>
+                  </view>
+                  <view class='weui-flex__item' wx:elif="{{orderstate=='待完成'}}">
+                      <view class='controlbtn {{btntype}}' data-value="{{ordernum}}" id='{{id}}' catchtap='confirmorder'>
+                          确认完成
+                      </view>
+                  </view>
+                  <view class='weui-flex__item' wx:elif="{{orderstate=='已完成'}}">
+                      <view class='controlbtn {{btntype}}' data-value="{{ordernum}}" id='{{id}}' catchtap='deletorder'>
+                          删除
+                      </view>
+                  </view>
+              </view>
+          </view>
+    </view>
+</template> 
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" 
+                    bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);">
+                </view>
+            </view>
+            <view class="weui-tab__panel ordercontent">
+                <view class="weui-tab__content" wx:if="{{activeIndex == 0}}">
+                    <view class='contentwraper'>
+                        <block wx:for="{{order}}" wx:key="id">
+                            <template is="orderitem" data="{{...item}}"></template>
+                        </block>  
+                        <view class='nodata' wx:if="{{order.length==0}}">
+                          <image src='/images/nodata.png'></image>
+                          <view class='tipinfo'>暂无数据</view>
+                        </view>             
+                    </view>
+                </view>
+                <view class="weui-tab__content" wx:elif="{{activeIndex == 1}}">
+                    <view class='contentwraper'>
+                        <block wx:for="{{order}}" wx:key="id">
+                            <template is="orderitem" data="{{...item}}"></template>
+                        </block>
+                        <view class='nodata' wx:if="{{order.length==0}}">
+                          <image src='/images/nodata.png'></image>
+                          <view class='tipinfo'>暂无数据</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-tab__content" wx:elif="{{activeIndex == 2}}">
+                    <view class='contentwraper'>
+                        <block wx:for="{{order}}" wx:key="id">
+                            <template is="orderitem" data="{{...item}}"></template>
+                        </block>
+                        <view class='nodata' wx:if="{{order.length==0}}">
+                          <image src='/images/nodata.png'></image>
+                          <view class='tipinfo'>暂无数据</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-tab__content" wx:elif="{{activeIndex == 3}}">
+                    <view class='contentwraper'>
+                        <block wx:for="{{order}}" wx:key="id">
+                            <template is="orderitem" data="{{...item}}"></template>
+                        </block>
+                        <view class='nodata' wx:if="{{order.length==0}}">
+                          <image src='/images/nodata.png'></image>
+                          <view class='tipinfo'>暂无数据</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-tab__content" wx:else="{{activeIndex == 4}}">
+                    <view class='contentwraper'>
+                        <block wx:for="{{order}}" wx:key="id">
+                            <template is="orderitem" data="{{...item}}"></template>
+                        </block>
+                        <view class='nodata' wx:if="{{order.length==0}}">
+                          <image src='/images/nodata.png'></image>
+                          <view class='tipinfo'>暂无数据</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='custompicker {{selectrechargetype?"showpicker":""}}'>
+        <view class='emptyarea' bindtap='hidecustompicker'></view>
+        <view class='pickerwraper'>
+            <view class='pickercontent'>
+                <view class='title weui-flex'>
+                    <view class='weui-flex__item'></view>
+                    <view class='weui-flex__item item4 pickertitle'>
+                        选择充值方式
+                    </view>
+                    <view class='weui-flex__item pickercancel' bindtap='hidecustompicker'>
+                        取消
+                    </view>
+                </view>
+                <view class='pickeritems'>
+                    <view class='pickeritemswrap' wx:if="{{!rechargetypeselected}}">
+                        <block wx:for="{{rechargetypes}}" wx:key="id">
+                            <view class='rechargeitem' data-value="{{item.id}}" bindtap='rechargetypeselected'>
+                                <view class='rechargeitemwrap weui-flex'>
+                                    <view class='weui-flex__item'>
+                                        <image class='typeicon' src='{{item.url}}'></image>
+                                    </view>
+                                    <view class='weui-flex__item item4'>
+                                        <view class='rechargetypename'>{{item.name}}</view>
+                                    </view> 
+                                    <view class='weui-flex__item'>
+                                        <image class='selecticon' src='/images/u1407.png' wx:if="{{!item.rechgetypeselected}}"></image>
+                                        <image class='selecticon' src='/images/ino.png' wx:if="{{item.rechgetypeselected}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                    <view class='pickeritemswrap' wx:if="{{rechargetypeselected}}">
+                        <block wx:for="{{rechargenumber}}" wx:key="id">
+                              <view class='gratuityitem {{item.select?"active":""}}' 
+                              data-value="{{item.id}}" bindtap='rechargenumberselect'>￥ {{item.value}}</view>
+                        </block>
+                        <view class='clearfloat'></view>
+                        <view class='customgratuity'>
+                            <view wx:if="{{hidegratuityinput}}" class='customtap' bindtap='activerechargenumberinput'>其它金额</view>
+                            <view wx:else class='customgratuityinput weui-flex'>
+                                <view class='weui-flex__item customgratuityinputtitle'>输入金额：</view>
+                                <input class='weui-flex__item' type='digit' bindinput='rechargenumberinput'></input>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='pickersub' wx:if="{{!rechargetypeselected}}" bindtap='chooserechargeamount'>确定</view>
+                <view class='pickersub' wx:if="{{rechargetypeselected}}" bindtap='paynow'>确认支付</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,88 @@
+<!--pages/addressselect/addressselect.wxml-->
+<view class='wraper'>
+    <view class='content'>
+        <view class='infowraper'>
+            <view class='weui-flex infoitem' bindtap='toaddressselect'>
+                <view class='weui-flex__item'>
+                    <view class='circle'>
+                        <image src='/images/greenicon.png'></image>
+                    </view>
+                </view>
+                <view class='weui-flex__item item4 itemcontent {{address==null?"holderstyle":""}}'>
+                    {{address==null?"请选择地址":address}}
+                </view>
+                <view class='item2'>
+                    <view class='arrowright'>
+                        <image src='/images/arrowright.png'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='weui-flex infoitem'>
+                <view class='weui-flex__item itemicon'>
+                    <image src='/images/ads.png'></image>
+                </view>
+                <view class='weui-flex__item item4 itemcontent'>
+                    <input type='text' placeholder-class='holderstyle' placeholder='单元，楼层，门牌号' bindinput='addressinput' value='{{addressdetail}}'></input>
+                </view>
+                <view class='item2'>
+                </view>
+            </view>
+            <view class='weui-flex infoitem'>
+                <view class='weui-flex__item itemicon'>
+                    <image src='/images/name.png'></image>
+                </view>
+                <view class='weui-flex__item item4 itemcontent'>
+                    <input type='text' placeholder='请输入姓名' bindinput='nameinput' value='{{name}}'></input>
+                </view>
+                <view class='item2'>
+                </view>
+            </view>
+            <view class='weui-flex infoitem'>
+                <view class='weui-flex__item itemicon'>
+                    <image src='/images/tel.png'></image>
+                </view>
+                <view class='weui-flex__item item4 itemcontent'>
+                    <input type='number' placeholder='请输入电话' bindinput='telinput' value='{{tel}}'></input>
+                    
+                </view>
+                <view class='item2' bindtap='setifcall'>
+                    <image class='ifcall' src='{{ifcall==1?"/images/call.png":"/images/nocall.png"}}'></image><text class='ifcalltip'>是否致电</text>
+                </view>
+            </view>
+        </view>
+        <view class='subbtn' bindtap='confirm'>确定</view><view class='saveadd' bindtap='ifsaveadd'><image src='{{saveadd==false?"/images/ino.png":"/images/icheck.png"}}'></image>保存地址</view>
+    </view>
+    <view class='menu'>
+      <view class='weui-flex'>
+        <view class='weui-flex__item'>
+            <text>我的地址</text>
+        </view>
+        <view class='weui-flex__item'>
+            
+        </view>
+      </view>
+    </view>  
+    <scroll-view class='addwrap' scroll-y="true" scroll-with-animation="true">
+    <view wx:if="{{addresslist}}" class='detailitem addressinfo' wx:for="{{addresslist}}" data-id="{{item.id}}" bindtap='infotoplaceorder' wx:key="id">
+        <view class='weui-flex personinfowrap'>
+            <view class='weui-flex__item textleft'>
+                <text class='personname'>{{item.name}}</text>
+            </view>
+            <view class='weui-flex__item textright'>
+                <text class='personinfo'>{{item.mobile}}</text>
+            </view>
+        </view>
+        <view class='weui-flex addressdetail'>
+            <view class='weui-flex__item'>
+                <text class='detailcontent'>{{item.address}} {{item.address_info}}
+                </text>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{!addresslist}}" class='noaddress'>
+      <image class='nodata' src='/images/nodata.png'></image>
+      <view class='tipinfo'>{{tipmessage}}</view>
+    </view>
+    </scroll-view>
+</view>
+

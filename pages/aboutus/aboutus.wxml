@@ -1,0 +1,15 @@
+<!--pages/aboutus/aboutus.wxml-->
+<view class='wraper'>
+    <view class='logo'>
+      <image src='/images/logo.png'></image>
+    </view>
+    <view class='title'>五一八快运</view>
+    <view class='little'>
+      CopyRight@2018-2019
+    </view>
+    <view class='little'>
+      成都团团赚赚科技有限公司 版权所有
+    </view>
+    <navigator class='version' url='/pages/userAgreement/userAgreement'>用户协议</navigator>
+    <view class='telcall' bindtap='makecall'>服务热线:<text>{{telnum}}</text></view>
+</view>

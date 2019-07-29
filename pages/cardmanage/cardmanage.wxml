@@ -1,0 +1,38 @@
+<!--pages/cardmanage/cardmanage.wxml-->
+<view class='wraper'>
+    <view class='nav'>
+      <view class='jl' wx:if="{{deleteready==false}}" bindtap='carddeleteready'>
+        <image src='/images/sc.png'></image>
+      </view>
+      <view class='jl' wx:else bindtap='carddeleteready'>
+        取消
+      </view>
+    </view>
+    <view class='cardlist'>
+      <view class='weui-flex blockbig' wx:for="{{banklist}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap='tocardedit'>
+          <view class='weui-flex__item'>
+            <view class='icon'>
+              <image src='/images/bank/{{item.bank_code}}.png'></image>
+            </view>
+          </view>
+          <view class='item4'>
+              <view class='bankname'>{{item.bank_name}}</view>
+              <view class='carddesc'>尾号{{item.lastnum}}储蓄卡</view>
+          </view>
+          <view class='weui-flex__item'>
+              <view class='arrowright' wx:if="{{deleteready==false}}">
+                <image src="/images/arrowright.png"></image>
+              </view>
+              <view class='select' wx:else data-index="{{index}}" catchtap='cardselect'>
+                <image src='{{item.select==true?"/images/icheck.png":"/images/u1407.png"}}'></image>
+              </view>
+          </view>
+      </view>
+      <view class='btn' wx:if="{{deleteready==false}}" bindtap='toaddcard'>添加</view>
+      <view class='btn' wx:else bindtap='deletecard'>确认删除</view>
+    </view>
+    <view class='nodata' wx:if="{{banklist.length==0}}">
+      <image src='/images/nodata.png'></image>
+      <view class='tipinfo'>暂无数据</view>
+    </view>
+</view>

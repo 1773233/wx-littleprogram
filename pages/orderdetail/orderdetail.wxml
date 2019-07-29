@@ -1,0 +1,276 @@
+<!--pages/orderdetail/orderdetail.wxml-->
+<view class='wraper'>
+    <view class='detailitem' wx:if="{{info}}">
+        <view class='orderstate' bindtap='orderlog'>{{orderstatus?orderstatus:""}}</view>
+        <view class='tips' wx:if="{{info.status==0}}">您的订单已取消,感谢您对五一八的信任,期待再次光临</view>
+        <view class='tips' wx:elif="{{info.status==1}}">订单待支付</view>
+        <view class='tips' wx:elif="{{info.status==2}}">正在等待游侠接单</view>
+        <view class='tips' wx:elif="{{info.status==3}}">{{riderstatus}}</view>
+        <view class='tips' wx:else>感谢您对五一八的信任,期待再次光临</view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item controlls' data-value="{{info.order_number}}" wx:if="{{deletcontrolswitch}}" bindtap='deleteorder'>
+                <view class='ordercontroll'>删除订单</view>
+            </view>
+            <view class='weui-flex__item controlls' id='{{info.id}}' data-value="{{info.order_number}}" wx:if="{{info.status==4}}" bindtap='tocomment'>
+                <view class='ordercontroll'>立即评价</view>
+            </view>
+            <view class='weui-flex__item controlls' data-value="{{info.order_number}}" wx:elif="{{info.status==2}}" bindtap='cancelorder'>
+                <view class='ordercontroll'>取消订单</view>
+            </view>
+            <view class='weui-flex__item controlls' bindtap='toindex'>
+                <view class='ordercontroll fullcolor'>再来一单</view>
+            </view>
+        </view>
+        <view class='spliter' wx:if="{{rider.id!=null}}">
+            <view class='edge left'></view>
+            <view class='dashedline'></view>
+            <view class='edge right'></view>
+        </view>
+        <view class='sender weui-flex' wx:if="{{rider.id!=null}}">
+            <view class='weui-flex__item avatar' id='{{rider.id}}' bindtap='toriderdetail'>
+                <image src='{{rider.headimg[0]?rider.headimg[0]:"/images/logo.png"}}'></image>
+            </view>
+            <view class='weui-flex__item item3'>
+                <view class='senderinfo'>
+                    <text>{{rider.name}} {{rider.sex==1?"男":"女"}}</text>
+                </view>
+                <view class='satisfiction'>
+                    <text>满意度：{{rider.star*100}}%</text>
+                </view>
+            </view>
+            <view class='weui-flex__item'>
+                <view class='call' bindtap='makecall'>
+                    <image src='/images/phonecall.png'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='detailitem addressinfo' wx:if="{{info}}">
+        <view class='weui-flex personinfowrap'>
+            <view class='weui-flex__item persicon'>
+                <image src='/images/greenicon.png'></image>
+            </view>
+            <view class='weui-flex__item item8'>
+                <text class='personname'>收货人：{{info.receiver_name}}</text>
+            </view>
+        </view>
+        <view class='weui-flex personinfowrap'>
+            <view class='weui-flex__item'>
+            </view>
+            <view class='weui-flex__item item8'>
+                <text class='personinfo'>手机号：{{info.receiver_mobile}}</text>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item'>
+            </view>
+            <view class='weui-flex__item item8'>
+                <text class='personinfo'>收货地址：{{info.end_address}}</text>
+            </view>
+        </view>
+        <view class='spliter'>
+            <view class='edge left'></view>
+            <view class='dashedline'></view>
+            <view class='edge right'></view>
+        </view>
+        <view class='weui-flex personinfowrap'>
+            <view class='weui-flex__item persicon'>
+                <image src='/images/redicon.png'></image>
+            </view>
+            <view class='weui-flex__item item8'>
+                <text class='personname'>{{info.service_type==1?"寄件人："+info.send_name:"类别："+info.title}}</text>
+            </view>
+        </view>
+        <view class='weui-flex personinfowrap'>
+            <view class='weui-flex__item'>
+            </view>
+            <view class='weui-flex__item item8'>
+                <text class='personinfo'>{{info.service_type==1?"手机号："+info.send_mobile:"需求："+info.requirement_info}}</text>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item'>
+            </view>
+            <view class='weui-flex__item item8'>
+                <text class='personinfo'>{{info.send_name==null?"购买地址":"寄出地址"}}：{{info.start_address}}</text>
+            </view>
+        </view>
+    </view>
+    <view class='detailitem nopadding' wx:if="{{info}}">
+        <view class='weui-flex'>
+            <view class='weui-flex__item textleft'>
+                <icon class='point'></icon>
+                <text class='goodstitle'>物品类型</text>
+            </view>
+            <view class='weui-flex__item textright'>
+                <text class='goodstitle'>{{info.title}}</text>
+            </view>
+        </view>
+        <view class='spliter'>
+            <view class='edge left'></view>
+            <view class='dashedline'></view>
+            <view class='edge right'></view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item textleft'>
+                <text class='orderpricetitle'>跑腿费</text>
+            </view>
+            <view class='weui-flex__item textright'>
+                <text class='typevalue'>￥{{info.freight_price}}</text>
+            </view>
+        </view>
+        <view class='weui-flex' wx:if="{{info.goods_weight!=null}}">
+            <view class='weui-flex__item textleft'>
+                <text class='orderpricetitle'>物品重量</text>
+            </view>
+            <view class='weui-flex__item textright'>
+                <text class='typevalue'>{{info.goods_weight}}</text>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item textleft'>
+                <text class='orderpricetitle'>商品垫付费</text>
+            </view>
+            <view class='weui-flex__item textright'>
+                <text class='typevalue'>￥{{info.goods_price}}</text>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item textleft'>
+                <text class='orderpricetitle'>小费</text>
+            </view>
+            <view class='weui-flex__item textright'>
+                <text class='typevalue'>￥{{info.total_add_price}}</text>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item textleft'>
+                <text class='orderpricetitle'>优惠券</text>
+            </view>
+            <view class='weui-flex__item textright'>
+                <text class='typevalue'>-￥{{info.cou_price}}</text>
+            </view>
+        </view>
+        <view class='weui-flex'>
+            <view class='weui-flex__item textleft'>
+                <text class='orderpricetitle'>总价</text>
+            </view>
+            <view class='weui-flex__item textright'>
+                <text class='typevalue'>￥{{info.total_pay_price}}</text>
+            </view>
+        </view>
+    </view>
+    <view class='detailitem otherinfo' wx:if="{{info}}">
+        <view class='orderdetailinfo'>
+            订单号：{{info.order_number}}
+        </view>
+        <view class='orderdetailinfo' wx:if="{{info.pay_name!=null}}">
+            支付方式：{{info.pay_name}}
+        </view>
+        <view class='orderdetailinfo' wx:if="{{rider.receipt_code!=null}}">
+            确认码：{{rider.receipt_code}}
+        </view>
+        <view class='orderdetailinfo'>
+            下单时间：{{createtime}}
+        </view>
+        <view class='orderdetailinfo' wx:if="{{taketime!=''}}">
+            预约时间：{{taketime}}
+        </view>
+        <!-- <view class='orderdetailinfo' wx:if="{{expecttime!=''}}">
+            预计送达：{{expecttime}}
+        </view>
+        <view class='orderdetailinfo' wx:if="{{finishtime!=''}}">
+            完成时间：{{finishtime}}
+        </view>
+        <view class='orderdetailinfo' wx:if="{{refundtime!=''}}">
+            退款时间：{{refundtime}}
+        </view> -->
+        <view class='orderdetailinfo'>
+            需求：<text wx:if="{{info.requirement_info==''}}">无</text>
+            <text wx:elif="{{info.requirement_info==null}}">无</text>
+            <text wx:else>{{info.requirement_info}}</text>
+        </view>
+        <view class='orderdetailinfo'>
+            备注：<text wx:if="{{info.remark==''}}">无</text>
+            <text wx:elif="{{info.remark==null}}">无</text>
+            <text wx:else>{{info.remark}}</text>
+        </view>
+    </view>
+    <view class='detailitem' wx:if="{{comment.id}}">
+        <view class='commentlist'>
+            <view class='weui-flex titleinfo'>
+                <view class='weui-flex__item'>
+                    <image class='useravatar' src='{{useravatar}}'></image>
+                    <text class='uname'>{{username}}</text>
+                </view>
+                <view class='weui-flex__item commenttime'>
+                  {{commenttime}}
+                </view>
+            </view>
+            <view class='content'>
+              <view class='commentwords'>{{comment.content}}</view>
+              <view class='starlist'>
+                <image wx:if="{{comment.star>=1}}" src='/images/xx.png'></image>
+                <image wx:if="{{comment.star>=2}}" src='/images/xx.png'></image>
+                <image wx:if="{{comment.star>=3}}" src='/images/xx.png'></image>
+                <image wx:if="{{comment.star>=4}}" src='/images/xx.png'></image>
+                <image wx:if="{{comment.star>=5}}" src='/images/xx.png'></image>
+              </view>
+              <view class='images'>
+                  <block wx:for="{{commentimgs}}" wx:key="*this">
+                      <image class='commentimage' bindtap='previewimg' data-value="{{item}}" src='{{item}}'></image>                  
+                  </block>
+                  <view class='clearfloat'></view>
+              </view>
+            </view>
+        </view>
+    </view>
+    <view class='detailitem' wx:if="{{tpimgpath.length!=0}}">
+      <view class='picjudgetitle'>服务图片</view>
+      <view class='judgepicwrap'>
+        <block wx:for="{{tpimgpath}}" wx:key="*this">
+          <image class='picjudgeitem' bindtap='previewProveimg' data-value="{{item}}" mode='widthFix' src='{{item}}'></image>
+        </block>
+      </view>
+    </view>
+    <view class='logs {{activelogs?"":"hide"}}'>
+      <view class='emptyarea' bindtap='hidecustompicker'></view>
+      <view class='logscontent'>
+        <view class='title weui-flex'>
+            <view class='weui-flex__item'></view>
+            <view class='weui-flex__item item4 pickertitle'>
+                订单状态
+            </view>
+            <view class='weui-flex__item pickercancel' bindtap='hidecustompicker'>
+                确认
+            </view>
+        </view>
+        <view class='logsvalue'>
+          <view class='weui-flex logitem' wx:for="{{loglist}}" wx:key="id">
+            <view class='weui-flex__item borderleft {{item.select?"active":""}}'>
+              <view class='point {{item.select?"active":""}}'>
+              </view>
+              <view class='line {{item.select?"active":""}}'></view>
+            </view>
+            <view class='weui-flex__item item3'>
+              <view class='titlelog'>
+                {{item.content}}
+              </view>
+            </view>
+            <view class='weui-flex__item'>
+              <view class='time'>
+              {{item.create_time}}
+              </view>
+            </view>
+          </view>
+          <view class='nodata' wx:if="{{loglist.length==0}}">
+            暂无记录
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='backtohome' bindtap='gotohome'>
+      <view class='Triangletop'></view>
+      <view class='Trianglebody'>主页</view>
+    </view>
+</view>

@@ -1,0 +1,4 @@
+<!--pages/userAgreement/userAgreement.wxml-->
+<view class="page">
+  <web-view src="{{ruleurl}}"></web-view>
+</view>

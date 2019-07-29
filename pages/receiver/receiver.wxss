@@ -1,0 +1,153 @@
+/* pages/receiver/receiver.wxss */
+.wraper{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing:border-box;
+  position: relative;
+  background-color: #F2F4F4;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+  text-align: center;
+  padding: 0px;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+  text-align: center;
+  padding: 0px;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+  text-align: center;
+  padding: 0px;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+  text-align: center;
+  padding: 0px;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+  text-align: center;
+  padding: 0px;
+}
+.wraper .content{
+  width: 94%;
+  margin-left: 3%;
+  overflow: hidden;
+}
+.wraper .closebtn{
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: 30rpx;
+}
+.wraper .closebtn image{
+  width: 100%;
+  height: 100%;
+}
+.wraper .title{
+  width: 100%;
+  height: 220rpx;
+  line-height: 220rpx;
+  color: #333;
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: left;
+  text-indent: 20rpx;
+}
+.wraper .infowraper{
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 20rpx;
+}
+.wraper .infoitem{
+  width: 94%;
+  margin-left: 3%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+  height: 120rpx;
+}
+.wraper .infoitem .circle{
+  width: 100%;
+  height: 120rpx;
+  text-align: center;
+}
+.wraper .infoitem .circle image{
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 20rpx;
+  margin-top: 42rpx;
+}
+.wraper .infoitem.last{
+  border-bottom: none;
+}
+.wraper .itemcontent{
+  line-height: 120rpx;
+}
+.wraper .itemcontent.gray{
+  font-size: 30rpx;
+  color: #999;
+}
+.wraper .itemicon{
+  text-align: center;
+}
+.wraper .itemicon image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 40rpx;
+}
+.wraper .itemcontent{
+  line-height: 120rpx;
+  height: 120rpx;
+  text-align: left;
+  font-size: 30rpx;
+  color: #333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.wraper .itemcontent input{
+  line-height: 120rpx;
+  height: 120rpx;
+  text-align: left;
+  font-size: 30rpx;
+  color: #333;
+}
+.wraper .subbtn{
+  width: 80%;
+  height: 100rpx;
+  margin-left: 10%;
+  background-color: #0a0919;
+  line-height: 100rpx;
+  text-align: center;
+  font-size:34rpx;
+  border-radius: 10rpx;
+  color: white;
+  margin-top: 40rpx;
+}
+.holderstyle{
+  color: #999;
+}
+.arrowright{
+  width: 12rpx;
+  height:26rpx;
+  margin-top: 40rpx;
+  float: right;
+  margin-right: 15rpx;
+}
+.arrowright image{
+  width: 100%;
+  height: 100%;
+}

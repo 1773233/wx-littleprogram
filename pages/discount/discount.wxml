@@ -1,0 +1,25 @@
+<!--pages/discount/discount.wxml-->
+<view class='wraper'>
+    <block wx:for="{{discounttikects}}" wx:key="*this">
+        <view class='ticketwraper' id='{{item.id}}' data-price="{{item.price}}" bindtap='chooseticket'>
+            <image class="ticket" mode='scaleToFill' src="/images/coupons.png">
+            </image>
+            <view class='left'>
+              <view class='lefttop'>{{item.city}}满{{item.full}}元可用</view>
+              <view class='leftmid'>优惠券</view>
+              <view class='leftbot'>有效时间:{{item.starttime}}至{{item.endtime}}</view>
+            </view>
+            <view class='right'>
+              <view class='count'>{{item.price}}</view>
+              <view class='qrcode'>
+                  <image src='/images/ftf.png'></image>
+              </view>
+            </view>
+        </view>
+    </block>
+    <view class='btn' wx:if="{{discounttikects.length!=0&&pagestatus!=0}}" bindtap='noticketuse'>不使用优惠券</view>
+    <view class='nodata' wx:if="{{discounttikects.length==0}}">
+      <image src='/images/nodata.png'></image>
+      <view class='tipinfo'>暂无优惠券</view>
+    </view>
+</view>

@@ -1,0 +1,78 @@
+<!--pages/getmoney/getmoney.wxml-->
+<view class='wraper'>
+    <view class='nav'><navigator url='/pages/cashout/cashout' class='jl'>提现明细</navigator></view>
+    <view class='weui-flex block withmargin'>
+      <view class='weui-flex__item'>
+        <view class='itemleft'>
+            请选择提现银行卡
+        </view>
+      </view>
+      <view class='weui-flex__item'>
+        <view class='itemright' bindtap='tocardmanage'>
+          管理银行卡
+        </view>
+      </view>
+    </view>
+    <view class='cardlist'>
+      <view class='weui-flex blockbig' wx:for="{{banklist}}" wx:key="{{item.id}}" data-index="{{index}}" bindtap='cardselect'>
+        <view class='weui-flex__item'>
+          <view class='icon'>
+            <image src='/images/bank/{{item.bank_code}}.png'></image>
+          </view>
+        </view>
+        <view class='item4'>
+            <view class='bankname'>{{item.bank_name}}</view>
+            <view class='carddesc'>尾号{{item.lastnum}}储蓄卡</view>
+        </view>
+        <view class='weui-flex__item'>
+            <view class='select' wx:if="{{selectindex==index}}">
+              <image src='/images/select2.png'></image>
+            </view>
+        </view>
+      </view>
+      <view class='weui-flex blockbig' bindtap='toaddcard'>
+        <view class='weui-flex__item'>
+            <view class='icon'>
+              <image src='/images/bank.png'></image>
+            </view>
+        </view>
+        <view class='item4'>
+            <view class='tipname'>添加银行卡</view>
+        </view>
+        <view class='weui-flex__item'>
+            <view class='arrowright'>
+                <image src="/images/arrowright.png"></image>
+            </view>
+        </view>
+      </view>
+    </view>
+    <view class='weui-flex block withmargin noborder'>
+      <view class='weui-flex__item'>
+        <view class='itemleft'>
+            提现金额 <text>余额(￥{{balance}})</text>   
+        </view>
+      </view>
+      <view class='weui-flex__item'>
+        <view class='itemright' bindtap='putall'>
+            全部提现
+        </view>
+      </view>
+    </view>
+    <view class='weui-flex block noborder'>
+      <view class='weui-flex__item'>
+        <view class='itemleft'>
+           <view class='bigwrods'>￥</view>
+           <input bindinput='cashmoneyinput' type='digit' value='{{cashoutmoney}}' placeholder='请输入提现金额' placeholder-class='holderstyle'></input>
+        </view>
+      </view>
+      <view class='weui-flex__item'>
+        <view class='itemright'>
+            <text class='smallwords'>最低{{mindrawals}}元起</text>
+        </view>
+      </view>
+    </view>
+    <view class='tips'>本次提现将会扣除0.1%的手续费</view>
+    <view class='btn' bindtap='confirmcashout'>
+      预计两小时到账,确认提现
+    </view>
+</view>

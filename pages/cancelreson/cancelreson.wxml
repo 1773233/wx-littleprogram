@@ -1,0 +1,27 @@
+<!--pages/cancelreson/cancelreson.wxml-->
+<view class='wraper'>
+  <view class='title'>取消订单</view>
+  <view class='resons'>
+    <view class='weui-flex resonsitem' wx:for="{{resons}}" wx:key="id"  id='{{item.id}}' bindtap='resonselect'>
+      <view class='weui-flex__item item6'>
+        <view class='itemtitle'>{{item.title}}</view>
+      </view>
+      <view class='weui-flex__item'>
+        <view class='cicon'>
+          <image src='{{item.select?"/images/icheck.png":"/images/u1407.png"}}'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='resoncontent'>
+    <textarea class='contentvalue' bindinput='resoncontent' placeholder-class='hoderstyle' placeholder='请写下您的原因（选填）'></textarea>
+  </view>
+  <view class='btns weui-flex'>
+    <view class='btn weui-flex__item'>
+      <view class='btncontent back' bindtap='backtoorder'>返回首页</view>
+    </view>
+    <view class='btn weui-flex__item'>
+      <view class='btncontent' bindtap='submitreson'>提交原因</view>
+    </view>
+  </view>
+</view>

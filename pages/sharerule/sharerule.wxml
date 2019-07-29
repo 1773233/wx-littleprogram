@@ -1,0 +1,6 @@
+<!--pages/sharerule/sharerule.wxml-->
+<view class='weui-article'>
+  <view class='parm'>
+    <web-view src="{{ruleurl}}"></web-view>
+  </view>
+</view>

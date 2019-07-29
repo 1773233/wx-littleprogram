@@ -1,0 +1,168 @@
+/* pages/shareprize/shareprize.wxss */
+.wraper{
+  width: 100%;
+  background-color: #FAFAFA;
+  overflow: hidden;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+  text-align: center;
+  padding: 0px;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+  text-align: center;
+  padding: 0px;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+  text-align: center;
+  padding: 0px;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+  text-align: center;
+  padding: 0px;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+  text-align: center;
+  padding: 0px;
+}
+.totalcount{
+  width: 100%;
+  overflow: hidden;
+  padding-top: 60rpx;
+  text-align: center;
+  box-shadow:0px 2px 5px rgba(204, 204, 204, 0.3);
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+.prizecount{
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 60rpx;
+}
+.bigtitle{
+  color: #333;
+  font-size: 30rpx;
+  line-height: 30rpx;
+}
+.textskyblue{
+  color: #131426;
+}
+.prizecount{
+  font-size: 80rpx;
+}
+.unit{
+  font-size: 24rpx;
+}
+.big{
+  font-size: 40rpx;
+}
+.sharecount{
+  width: 90%;
+  margin-left: 5%;
+  height: 160rpx;
+  box-sizing: border-box;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+.title{
+  font-size: 24rpx;
+  line-height: 30rpx;
+  color: #333;
+  margin-top: 35rpx;
+}
+.count{
+  font-size: 56rpx;
+  line-height: 60rpx;
+}
+.costlist{
+  width: 100%;
+  overflow: hidden;
+  box-shadow:0px -2px 5px rgba(204, 204, 204, 0.3);
+  background-color: #fff;
+}
+.weui-cells__title{
+  color: #333;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  background-color: #fafafa;
+}
+.detailitem{
+  height: 160rpx;
+}
+.avatar{
+  text-align: center;
+}
+.avatar image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  margin: 30rpx auto;
+}
+.costtitle{
+  height: 80rpx;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 28rpx;
+  text-align: left;
+  text-indent: 15rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+.date{
+  height: 80rpx;
+  line-height: 60rpx;
+  color: #999;
+  font-size: 24rpx;
+  text-align: left;
+  width: 100%;
+  text-indent: 15rpx;
+}
+.costmoney{
+  line-height: 160rpx;
+  font-size: 30rpx;
+  color: #999;
+  text-align: center;
+}
+.placehoder{
+  height: 3rpx;
+  width: 100%;
+}
+.borderbtom{
+  height: 100%;
+  background-color: #eee;
+}
+.nodata{
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.nodata image{
+  width: 150rpx;
+  height: 180rpx;
+  margin-top: 20vh;
+}
+.nodata .tipinfo{
+  font-size: 28rpx;
+  color: #999;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  text-align: center;
+}

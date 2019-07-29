@@ -1,0 +1,4 @@
+/* pages/userAgreement/userAgreement.wxss */
+page{
+    background-color: #FFFFFF;
+}

@@ -1,0 +1,39 @@
+<!--pages/amounttomoney/amounttomoney.wxml-->
+<view class='wraper'>
+    <view class='tip'><text class='tipcontent'>请绑定用户本人银行卡</text></view>
+    <picker bindchange="cardtypechange" value="{{selectcardtype}}" range="{{cardtypelist}}">
+      <view class='weui-flex inputcontent'>
+        <view class='weui-flex__item'>
+            <view class='title'>银行类型</view>
+        </view>
+        <view class='weui-flex__item item2'>
+            <view class='words' wx:if="{{selectcardtype==-1&&getname==''}}">请选择银行卡类型</view>
+            <view class='colorwords' wx:else>{{getname==""?cardtypelist[selectcardtype]:getname}}</view>
+        </view>
+        <view class='weui-flex__item'>
+            <view class='arrowright'>
+                <image src='/images/arrowright.png'></image>
+            </view>
+        </view>
+      </view>
+    </picker>        
+    <view class='weui-flex inputcontent'>
+        <view class='weui-flex__item'>
+            <view class='title'>持有人姓名</view>
+        </view>
+        <view class='weui-flex__item item3'>
+            <input class='input' type='text' bindinput='nameinput' value="{{name}}" placeholder='请输入持有人姓名'></input>
+        </view>        
+    </view>
+    <view class='weui-flex inputcontent'>
+        <view class='weui-flex__item'>
+            <view class='title'>银行卡号</view>
+        </view>
+        <view class='weui-flex__item item3'>
+            <input class='input' type='number' bindinput='cardnumberinput' value='{{cardnumber}}' placeholder='请输入银行卡号'></input>
+        </view>        
+    </view>
+    <view class='btn'>
+        <view class='getmoneynow' bindtap='confirm'>确定</view>
+    </view>
+</view>

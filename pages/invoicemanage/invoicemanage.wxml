@@ -1,0 +1,91 @@
+<!--pages/invoicemanage/invoicemanage.wxml-->
+<template name="orderitem">
+    <view class='orderitemwrap' data-value="{{id}}" bindtap='invoiceselect'>
+          <view class='title weui-flex'>
+              <view class='weui-flex__item'>
+                  <view class='ordertype'>
+                      <view class='funcicon'>
+                          <image src="{{select==true?'/images/icheck.png':'/images/u1407.png'}}"></image>
+                      </view>
+                      <view class='ordertypename'>{{title}}</view>
+                  </view>
+              </view>
+          </view>
+          <view class='addressinfo'>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item'>
+                      <view class='addressicon'>
+                          <image src='/images/greenicon.png'></image>
+                      </view>
+                  </view>
+                  <view class='weui-flex__item item6 addressdetail'>
+                      {{start_address}}
+                  </view>
+              </view>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item'>
+                      <view class='addressicon'>
+                          <image src='/images/redicon.png'></image>
+                      </view>
+                  </view>
+                  <view class='weui-flex__item item6 addressdetail'>
+                      {{end_address}}
+                  </view>
+              </view>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item message'>
+                      备注：{{remark==null?"无":remark}}
+                  </view>
+              </view>
+          </view>
+          <view class='orderinfo'>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item infotitle'>
+                      预约时间
+                  </view>
+                  <view class='weui-flex__item infovalue'>
+                      {{create_time}}
+                  </view>
+              </view>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item infotitle'>
+                      订单总价
+                  </view>
+                  <view class='weui-flex__item infovalue colorred'>
+                      {{total_price}}元
+                  </view>
+              </view>
+          </view>
+          <view class='orderstate'>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item orderdate'>
+                      {{create_time}}
+                  </view>
+              </view>
+          </view>
+    </view>
+</template> 
+<view class='wraper'>
+    <view class='nav'><navigator url='/pages/invoicehistory/invoicehistory' class='sqjl'>申请记录</navigator></view>
+    <block wx:for="{{invoice}}" wx:key="id">
+        <template is="orderitem" data="{{...item}}"></template>
+    </block>
+    <view class='nodata' wx:if="{{invoice.length==0}}">
+      <image src='/images/nodata.png'></image>
+      <view class='tipinfo'>暂无可申请发票订单</view>
+    </view>
+    <view class='bottomfunc weui-flex' wx:if="{{invoice.length!=0}}">
+        <view class='weui-flex__item funcitem'>
+            <image src='{{selectall==true?"/images/icheck.png":"/images/u1407.png"}}' bindtap='selectall'></image>
+            <text>全选</text>
+        </view>
+        <view class='weui-flex__item item2 funcitem'>
+          合计：<text class='highlight'>{{totalmoney}}元</text>
+        </view>
+        <view class='weui-flex__item funcitem'>
+          <view class='applyinvoice {{applycould?"":"disable"}}' bindtap='applynow'>
+          申请发票
+          </view>
+        </view>
+    </view>  
+</view>

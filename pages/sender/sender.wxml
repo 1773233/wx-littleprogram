@@ -1,0 +1,56 @@
+<!--pages/sender/sender.wxml-->
+<view class='wraper'>
+    <view class='content'>
+        <view class='title'>
+            编辑地址信息
+        </view>
+        <view class='infowraper'>
+            <view class='weui-flex infoitem' bindtap='toaddressselect'>
+                <view class='weui-flex__item'>
+                    <view class='circle'>
+                        <image src='/images/greenicon.png'></image>
+                    </view>
+                </view>
+                <view class='weui-flex__item item6 itemcontent {{address==null?"holderstyle":""}}'>
+                    {{address==null?"请选择地址":address}}
+                </view>
+                <view class='weui-flex__item'>
+                    <view class='arrowright'>
+                        <image src='/images/arrowright.png'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='weui-flex infoitem'>
+                <view class='weui-flex__item itemicon'>
+                    <image src='/images/ads.png'></image>
+                </view>
+                <view class='weui-flex__item item6 itemcontent'>
+                    <input type='text' placeholder-class='holderstyle' placeholder='单元，楼层，门牌号' bindinput='addressinput' value='{{addressdetail}}'></input>
+                </view>
+                <view class='weui-flex__item'>
+                </view>
+            </view>
+            <view class='weui-flex infoitem'>
+                <view class='weui-flex__item itemicon'>
+                    <image src='/images/name.png'></image>
+                </view>
+                <view class='weui-flex__item item6 itemcontent'>
+                    <input type='text' placeholder='请输入姓名' bindinput='nameinput' value='{{name}}'></input>
+                </view>
+                <view class='weui-flex__item'>
+                </view>
+            </view>
+            <view class='weui-flex infoitem last'>
+                <view class='weui-flex__item itemicon'>
+                    <image src='/images/tel.png'></image>
+                </view>
+                <view class='weui-flex__item item6 itemcontent'>
+                    <input type='number' placeholder='请输入电话' bindinput='telinput' value='{{tel}}'></input>
+                </view>
+                <view class='weui-flex__item'>
+                </view>
+            </view>
+        </view>
+        <view class='subbtn' bindtap='confirm'>确定</view>
+    </view>
+</view>

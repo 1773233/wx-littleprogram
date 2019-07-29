@@ -1,0 +1,29 @@
+<!--pages/newslist/newslist.wxml-->
+<view class='wraper'>
+  <view class='newsitem' wx:for="{{newslist}}" id='{{item.id}}' wx:key="id" data-ifdel="{{item.ois_del?item.ois_del:''}}" data-dotype="{{item.dotype?item.dotype:''}}" data-rid="{{item.oid?item.oid:''}}" data-doid="{{item.doid?item.doid:''}}" data-ordernum="{{item.order_number?item.order_number:''}}" bindtap='pagejump'>
+    <view class='weui-flex toptit'>
+        <view class='weui-flex__item itemhf'>
+            <view class='point {{messagetype==1?"orange":"dark"}}'>
+            </view>
+        </view>
+        <view class='weui-flex__item item2'>
+            <view class='name'>
+                {{item.title}}
+            </view>
+        </view>
+        <view class='weui-flex__item item5 tr'>
+            <view class='date'>
+            {{item.create_time}}
+            </view>
+        </view>
+    </view>
+    <view class='desc'>
+      {{item.content}}
+    </view>
+  </view>
+  <view class='nodata' wx:if="{{newslist.length==0}}">
+    <image src='/images/nodata.png'></image>
+    <view class='tipinfo'>暂无消息</view>
+  </view>
+</view>
+

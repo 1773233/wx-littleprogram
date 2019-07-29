@@ -1,0 +1,42 @@
+<!--pages/addressmanage/addressmanage.wxml-->
+<view class='wraper'>
+    <scroll-view class='addwrap' scroll-y="true" scroll-with-animation="true">
+    <view wx:if="{{addresslist.length!=0}}" class='detailitem' wx:for="{{addresslist}}" wx:key="id">
+        <view class='weui-flex personinfowrap'>
+            <view class='weui-flex__item textleft'>
+                <text class='personname'>{{item.name}}</text>
+            </view>
+            <view class='weui-flex__item textright'>
+                <text class='personinfo'>{{item.mobile}}</text>
+            </view>
+        </view>
+        <view class='weui-flex addressdetail'>
+            <view class='weui-flex__item'>
+                <text class='detailcontent'>{{item.address}}—{{item.address_info}}
+                </text>
+            </view>
+        </view>
+        <view class='weui-flex controlls'>
+          <view class='weui-flex__item itemhf icons'>
+          </view>
+          <view class='weui-flex__item item2 name'>
+          </view>
+          <view class='weui-flex__item' data-value="{{item.id}}" bindtap='editaddress'>
+            <image class='conicon' src='/images/bj.png'></image>
+            <view class='name'>编辑</view>
+          </view>
+          <view class='weui-flex__item' data-value="{{item.id}}" bindtap='deletaddress'>
+            <image class='conicon' src='/images/sc.png'></image>
+            <view class='name'>删除</view>
+          </view>
+        </view>
+    </view>
+    <view wx:if="{{addresslist.length==0}}" class='noaddress'>
+      <image class='nodata' src='/images/nodata.png'></image>
+      <view class='tipinfo'>{{tipmessage}}</view>
+    </view>
+    </scroll-view>
+    <view class='btn'>
+        <view class='addnewaddress' data-value="add" bindtap='tosenderaddress'>添加新地址</view>
+    </view>
+</view>

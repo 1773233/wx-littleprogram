@@ -1,0 +1,73 @@
+<!--pages/wallet/wallet.wxml-->
+<view class='wraper'>
+    <view class='nav'><text class='moneydetail' bindtap='showmoneydetail'>余额明细</text></view>
+    <view class='pagetitle'>
+        账户余额
+    </view>
+    <view class='money'>
+        ￥{{money}}
+    </view>
+    <view class='btns'>
+        <button class="weui-btn recharge" bindtap='showrechargepicker'>充值</button>
+    </view>
+    <view class='btns cashout'>
+        <button class="weui-btn recharge" bindtap='togetmoney'>提现</button>
+    </view>
+    <view class='applyticket' bindtap='invoiceapply'>申请发票</view>
+    <view class='custompicker {{selectrechargetype?"showpicker":""}}'>
+        <view class='emptyarea' bindtap='hidecustompicker'></view>
+        <view class='pickerwraper'>
+            <view class='pickercontent'>
+                <view class='title weui-flex'>
+                    <view class='weui-flex__item selectforsure'>
+                      <view wx:if="{{!rechargetypeselected}}" bindtap='chooserechargeamount'>
+                        确认
+                      </view>
+                    </view>
+                    <view class='weui-flex__item item4 pickertitle'>
+                        选择充值方式
+                    </view>
+                    <view class='weui-flex__item pickercancel' bindtap='hidecustompicker'>
+                        取消
+                    </view>
+                </view>
+                <view class='pickeritems'>
+                    <view class='pickeritemswrap' wx:if="{{rechargetypeselected}}">
+                        <block wx:for="{{rechargetypes}}" wx:key="id">
+                            <view class='rechargeitem' data-value="{{item.id}}" bindtap='rechargetypeselected'>
+                                <view class='rechargeitemwrap weui-flex'>
+                                    <view class='weui-flex__item'>
+                                        <image class='typeicon' src='{{item.url}}'></image>
+                                    </view>
+                                    <view class='weui-flex__item item4'>
+                                        <view class='rechargetypename'>{{item.name}}</view>
+                                    </view> 
+                                    <view class='weui-flex__item'>
+                                        <image class='selecticon' src='/images/u1407.png' wx:if="{{!item.rechgetypeselected}}"></image>
+                                        <image class='selecticon' src='/images/icheck.png' wx:if="{{item.rechgetypeselected}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                    <view class='pickeritemswrap' wx:if="{{!rechargetypeselected}}">
+                        <block wx:for="{{rechargenumber}}" wx:key="id">
+                              <view class='gratuityitem {{item.select==true?"active":""}}' 
+                              data-value="{{item.id}}" bindtap='rechargenumberselect'>￥ {{item.value}}</view>
+                        </block>
+                        <view class='clearfloat'></view>
+                        <view class='customgratuity'>
+                            <view wx:if="{{hidegratuityinput}}" class='customtap' bindtap='activerechargenumberinput'>其它金额</view>
+                            <view wx:else class='customgratuityinput weui-flex'>
+                                <view class='weui-flex__item customgratuityinputtitle'>输入金额：</view>
+                                <input class='weui-flex__item' focus='focus' type='digit' value='{{rechargeamount==0?"":rechargeamount}}' bindinput='rechargenumberinput'></input>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='pickersub' wx:if="{{!rechargetypeselected}}" bindtap='chooserechargeamount'>确定</view>
+                    <view class='pickersub' wx:if="{{rechargetypeselected}}" bindtap='paynow'>确认支付</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

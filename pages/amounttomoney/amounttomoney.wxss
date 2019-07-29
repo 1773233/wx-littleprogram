@@ -1,0 +1,143 @@
+/* pages/amounttomoney/amounttomoney.wxss */
+.wraper{
+  width: 100%;
+  height: 100vh;
+  box-sizing:border-box;
+  background-color: #F5F5F5;
+  box-shadow: 0px 0px 5px 1px #ddd;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+}
+.item7{
+  -webkit-box-flex:7;
+  -webkit-flex:7;
+  flex:7;
+  padding: 0px;
+}
+.item8{
+  -webkit-box-flex:8;
+  -webkit-flex:8;
+  flex:8;
+}
+.arrowright{
+  width: 12rpx;
+  height:26rpx;
+  margin-top: 20rpx;
+  float: right;
+  margin-right: 15rpx;
+}
+.arrowright image{
+  width: 100%;
+  height: 100%;
+}
+.wraper .tip{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #555;
+}
+.wraper .tipcontent{
+  float: left;
+  margin-left: 20rpx;
+}
+.wraper .detail{
+  float: right;
+  color: #FE8702;
+  font-size: 28rpx;
+  margin-right: 20rpx;  
+}
+.wraper .inputcontent{
+  background-color: #fff;
+  height: 100rpx;
+  border-bottom: 1px solid #eee;
+}
+.wraper .inputcontent .words{
+  color: #999;
+  font-size: 28rpx;
+  line-height: 100rpx;
+  text-indent: 20rpx;
+}
+.wraper .inputcontent .colorwords{
+  color: #333;
+  font-size: 28rpx;
+  line-height: 100rpx;
+  text-indent: 20rpx;
+}
+.wraper .title{
+  width: 80%;
+  margin-left: 10%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: justify;
+  display: inline-block;
+  font-size: 30rpx;
+  color: #333;
+  overflow: hidden;
+}
+.wraper .title:after{
+  content: "";
+  display:inline-block;
+  width:100%;
+}
+.wraper .input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 28rpx;
+  line-height: 100rpx;
+  text-align: left;
+  padding-left: 20rpx;
+}
+.wraper .smalltip{
+  font-size: 28rpx;
+  line-height: 100rpx;
+  height: 100rpx;
+  color: #999;
+  padding-left: 20rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.wraper .smalltip text{
+  color:#FE8702;
+}
+.wraper .btn{
+  width: 80%;
+  margin-left: 10%;
+  height: 100rpx;
+  margin-top: 100rpx;
+}
+.wraper .btn .getmoneynow{
+  width: 100%;
+  height: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #131426;
+  border-radius: 10rpx;
+}

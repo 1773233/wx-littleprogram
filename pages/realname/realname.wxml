@@ -1,0 +1,88 @@
+<!--pages/realname/realname.wxml-->
+<view class='wraper'>
+    <view class='progress'>
+        <view class='background'></view>
+        <view class='progressbarpoint weui-flex'>
+            <view class='weui-flex__item progressitem'>
+                <image src='/images/u844.png'></image>
+                <view class='progressstep'>1</view>
+                <view class='progressstepname'>提交资料</view>
+            </view>
+             <view class='weui-flex__item item2 progressitem'>
+                <image src='{{realnamestatus>=1?"/images/u844.png":"/images/u846.png"}}'></image>
+                <view class='progressstep'>2</view>
+                <view class='progressstepname'>资料审核</view>
+            </view> 
+            <view class='weui-flex__item progressitem'>
+                <image src='{{realnamestatus>=2?"/images/u844.png":"/images/u846.png"}}'></image>
+                <view class='progressstep'>3</view>
+                <view class='progressstepname'>审核结果</view>
+            </view>            
+        </view>
+    </view>
+    <view class='tipmessage'>
+        <text class='nesscery'>*</text>{{messagetip}}
+    </view>
+    <view class='infowrap'>
+        <view class='weui-flex'>
+            <view class='weui-flex__item title'>姓名</view>
+            <view class='weui-flex__item item4'>
+                <input type='text' placeholder='请输入姓名' disabled='{{realnamestatus==0?"":"disabled"}}' bindinput='realnameinput' value='{{realnamestatus==0?"":realname}}'></input>
+            </view>
+            <view class='weui-flex__item itemsm'></view>
+        </view>
+         <view class='weui-flex'>
+            <view class='weui-flex__item title'>身份证号</view>
+            <view class='weui-flex__item item4'>
+                <input type='text' placeholder='请输入身份证号' disabled='{{realnamestatus==0?"":"disabled"}}' bindinput='idcardinput' value='{{realnamestatus==0?"":idcard}}'></input>
+            </view>
+            <view class='weui-flex__item itemsm'></view>
+        </view>
+        <view class='weui-flex bordernone'>
+            <view class='weui-flex__item item2 title'><text class='nesscery'>*</text>身份证正面和反面照片</view>
+            <view class='weui-flex__item item2'>
+            </view>
+        </view> 
+        <view class='weui-flex bordernone'>
+            <view class='weui-flex__item'>
+                <view class='pics' bindtap='choosesfzzmimage'>
+                    <block wx:if="{{realnamestatus==0}}">
+                        <view wx:if="{{!sfzzmselected}}">
+                            <image class='default' src='/images/sfz1.png'></image>
+                            <view class='sfztip'>身份证正面照</view>
+                        </view>
+                        <image class='selected' src='{{sfzzmurl}}' wx:else></image>
+                    </block>
+                    <block wx:else>
+                        <image class='selected' src='{{sfzzmurl}}'></image>
+                    </block>
+                </view>
+            </view>
+            <view class='weui-flex__item'>
+                <view class='pics' bindtap='choosesfzfmimage'>
+                    <block wx:if="{{realnamestatus==0}}">
+                        <view wx:if="{{!sfzfmselected}}">
+                            <image class='default' src='/images/sfz2.png'></image>
+                            <view class='sfztip'>身份证背面照</view>
+                        </view>
+                        <image class='selected' src='{{sfzfmurl}}' wx:else></image>
+                    </block>
+                    <block wx:else>
+                        <image class='selected' src='{{sfzfmurl}}'></image>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view> 
+    <view class='btn'>
+        <view class='submit' bindtap='submitinfo' wx:if="{{realnamestatus==0}}">
+            <text>确定</text>
+        </view>
+        <view class='submit' wx:elif="{{realnamestatus==1}}">
+            <text>资料审核中</text>
+        </view>
+        <view class='submit' bindtap='reidentify' wx:elif="{{realnamestatus==3}}">
+            <text>重新认证</text>
+        </view>
+    </view>
+</view>

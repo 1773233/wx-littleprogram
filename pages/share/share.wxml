@@ -1,0 +1,67 @@
+<!--pages/share/share.wxml-->
+<view class='wraper'>
+    <view class='background {{hide==true?"hide":""}}'>
+        <view class='backimg'>
+            <image mode="widthFix" src="/images/share1.png"></image>
+        </view>
+        <view class='qrcodewrap'>
+            <image class='qrback' mode="widthFix" src='/images/share3.png'></image>
+            <view class='qrcodetxtwrap'>
+              <view class='title'>
+                面对面分享
+              </view>
+              <view class="smalltitle">分享成为游侠</view>
+              <image mode="widthFix" src='{{qrcoderider==null?"/images/logo.png":qrcoderider}}' class='qrcodeimg'/>
+              <button class="sharenow" id='torider' open-type='share'>立即分享</button>
+              <view class="smalltitle">分享成为用户</view>     
+              <image mode="widthFix" src='{{qrcodeuser==null?"/images/logo.png":qrcodeuser}}' class='qrcodeimg'/>
+              <button class="sharenow" id='touser' open-type='share'>立即分享</button>
+            </view>     
+        </view>
+        <view class='descwrap'>
+          <view class='textsmall'>分享给好友，当好友成功注册时（分享游侠需审核成功）</view>
+          <view class='textbig'>您将获得{{money}}元奖励</view>
+          <view class='textsmall'>
+              <view class='smalltextwraper'>
+                  <text class='textgray'>(48小时内到账)</text>
+                  <text class='textskyblue' bindtap='torule'>更多规则</text>
+              </view>
+          </view>
+          <view class='textsmall'>
+              <view class='prize'>
+                  奖励<text class='textskyblue'> {{totalmoney}} </text>元，<text bindtap='toshareprize'>查看详情</text> 
+              </view>
+          </view>
+        </view> 
+    </view>
+    <!-- <view class='custompicker {{showcustompicker?"showpicker":""}}'>
+        <view class='emptyarea' bindtap='hidecustompicker'></view>
+        <view class='pickerwraper'>
+            <view class='pickercontent'>
+                <view class='title weui-flex'>
+                    <view class='weui-flex__item'></view>
+                    <view class='weui-flex__item item4 pickertitle'>
+                        分享给朋友
+                    </view>
+                    <view class='weui-flex__item pickercancel' bindtap='hidecustompicker'>
+                        取消
+                    </view>
+                </view>
+                <view class='pickeritems'>
+                    <view class='pickeritemswrap'>
+                        <block wx:for="{{shareitems}}" wx:key="item.value">
+                            <view class='shareitem' data-value="{{item.value}}" bindtap='shareitemselected'>
+                                <view class='shareitemwrap'>
+                                    <image class='backwrap' src='/images/u1407.png'></image>
+                                    <image class='shareitempic' src='{{item.url}}'></image>
+                                    <view class='shareitemname'>{{item.name}}</view>
+                                </view>
+                            </view>
+                            <view class='clearfloat {{item.id%3==0?"show":""}}'></view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+</view>

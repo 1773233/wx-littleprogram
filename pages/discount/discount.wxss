@@ -1,0 +1,117 @@
+/* pages/discount/discount.wxss */
+.wraper{
+  width: 100%;
+  height: auto;
+}
+.nodata{
+  width: 100%;
+  height: 80vh;
+  text-align: center;
+}
+.nodata image{
+  width: 180rpx;
+  height: 200rpx;
+  margin-top: 30vh;
+  border-radius: 50rpx;
+}
+.nodata .tipinfo{
+  font-size: 28rpx;
+  color: #999;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  text-align: center;
+}
+.ticketwraper{
+  width: 96%;
+  height: 220rpx;
+  overflow: hidden;
+  margin: 20rpx 2%;
+  position: relative;
+}
+.ticket{
+  width: 100%;
+  height: 222rpx;
+  position: absolute;
+  top: 0px;
+  z-index: 9;
+}
+.left{
+  position: absolute;
+  z-index: 12;
+  width: 75%;
+  height: 220rpx;
+  top: 0rpx;
+  left: 0rpx;
+}
+.right{
+  position: absolute;
+  z-index: 12;
+  width: 25%;
+  height: 220rpx;
+  top: 0rpx;
+  right: 0rpx;
+}
+.lefttop{
+  width: 100%;
+  margin-top: 20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+}
+.leftmid{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 60rpx;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+.leftbot{
+  width: 100%;
+  height: 70rpx;
+  line-height: 40rpx;
+  font-size: 20rpx;
+  color: #eee;
+  text-align: center;
+}
+.count{
+  width: 100%;
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 80rpx;
+  font-weight:bold;
+  color: #131426;
+  text-align: center;
+}
+.qrcode{
+  width: 100%;
+  text-align: center;
+  height: auto;
+}
+.qrcode image{
+  width: 80rpx;
+  height:80rpx;
+}
+.tips{
+  width: 100%;
+  height: 80vh;
+  line-height: 80vh;
+  font-size: 30rpx;
+  color: #999;
+  text-align: center;
+}
+.btn{
+  width: 80%;
+  margin-left: 10%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #131426;
+}

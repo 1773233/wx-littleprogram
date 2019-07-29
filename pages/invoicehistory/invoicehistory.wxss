@@ -1,0 +1,139 @@
+/* pages/invoicehistory/invoicehistory.wxss */
+page{
+  background-color: #F5F5F5;
+}
+.wraper{
+  width: 100%;
+  height: auto;
+  padding-top: 20rpx;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+}
+.orderitemwrap{
+  width: 94%;
+  margin-left: 3%;
+  background-color: white;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 25rpx;
+}
+.orderitemwrap .invoicetitle{
+  height: 90rpx;
+  width:100%;
+}
+.orderitemwrap .ordertype{
+  height: 60rpx;
+  margin-top: 15rpx;
+}
+.orderitemwrap .leftbar{
+  width: 4rpx;
+  height: 70%;
+  float: left;
+  margin-top: 5%;
+  background-color: #1a1a1a;
+}
+.orderitemwrap .ordertypename{
+  line-height: 60rpx;
+  height: 60rpx;
+  margin-left: 20rpx;
+  color: #333;
+  float: left;
+  font-size: 30rpx;
+}
+.orderitemwrap .distance{
+  line-height: 90rpx;
+  text-align: center;
+  color: #fe8702;
+  font-size: 30rpx;
+}
+.orderitemwrap .invoiceinfo{
+  width: 100%;
+  overflow: hidden;
+  border-top: 1rpx dashed #ccc;
+  border-bottom: 1rpx dashed #ccc;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+}
+.orderitemwrap .invoiceinfo .weui-flex{
+  height: auto;
+}
+.orderitemwrap .invoiceinfo .title{
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #999;
+  text-indent: 20rpx;
+}
+.orderitemwrap .invoiceinfo .tip{
+  color:#fe8702;
+  font-size: 28rpx;
+}
+.orderitemwrap .invoiceinfo .invoicecontent{
+  line-height: 60rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+.orderitemwrap .orderinfo{
+  width: 100%;
+  overflow: hidden;
+}
+.orderitemwrap .orderinfo .weui-flex{
+  height: 80rpx;
+}
+.orderitemwrap .infotitle{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #111;
+  text-align: left;
+  font-size: 30rpx;
+  text-indent: 20rpx;
+}
+.orderitemwrap .infovalue{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #cc0000;
+  text-align: right;
+  padding-right: 20rpx;
+  font-size: 30rpx;
+}
+.nodata{
+  width: 100%;
+  height: 80vh;
+  text-align: center;
+}
+.nodata image{
+  width: 180rpx;
+  height: 200rpx;
+  margin-top: 30vh;
+  border-radius: 50rpx;
+}
+.nodata .tipinfo{
+  font-size: 28rpx;
+  color: #999;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  text-align: center;
+}

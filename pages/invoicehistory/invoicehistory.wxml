@@ -1,0 +1,122 @@
+<!--pages/invoicehistory/invoicehistory.wxml-->
+<template name="orderitem">
+    <view class='orderitemwrap' id="{{id}}">
+          <view class='invoicetitle weui-flex'>
+              <view class='weui-flex__item'>
+                  <view class='ordertype'>
+                      <view class='leftbar'></view>
+                      <view class='ordertypename'>{{content}}</view>
+                  </view>
+              </view>
+              <view class='weui-flex__item item3'>
+              </view>
+              <view class='weui-flex__item distance' wx:if="{{status==1}}">
+                  未处理
+              </view>
+              <view class='weui-flex__item distance' wx:elif="{{status==2}}">
+                  成功
+              </view>
+              <view class='weui-flex__item distance' wx:else>
+                  失败
+              </view>
+          </view>
+          <view class='invoiceinfo'>
+              <view class='weui-flex' wx:if="{{status==3}}">
+                  <view class='weui-flex__item tip'>
+                      {{reson}}
+                  </view>
+              </view>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item title'>
+                      发票类型：
+                  </view>
+                  <view class='weui-flex__item item3 invoicecontent'>
+                      {{type==1?"电子发票":"纸质发票"}}
+                  </view>
+              </view>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item title'>
+                      抬头类型：
+                  </view>
+                  <view class='weui-flex__item item3 invoicecontent'>
+                      {{head_type==1?"企业单位":"个人"}}
+                  </view>
+              </view>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item title'>
+                      发票内容：
+                  </view>
+                  <view class='weui-flex__item item3 invoicecontent'>
+                      {{content}}
+                  </view>
+              </view>
+              <view class='weui-flex' wx:if="{{head_type==1}}">
+                  <view class='weui-flex__item title'>
+                      企业/单位：
+                  </view>
+                  <view class='weui-flex__item item3 invoicecontent'>
+                      {{title}}
+                  </view>
+              </view>
+              <view class='weui-flex' wx:if="{{head_type==2}}">
+                  <view class='weui-flex__item title'>
+                      发票抬头：
+                  </view>
+                  <view class='weui-flex__item item3 invoicecontent'>
+                      {{title}}
+                  </view>
+              </view>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item title'>
+                      开票时间：
+                  </view>
+                  <view class='weui-flex__item item3 invoicecontent'>
+                      {{create_time}}
+                  </view>
+              </view>
+              <view class='weui-flex' wx:if="{{tax_num!=null&&tax_num!=''}}">
+                  <view class='weui-flex__item title'>
+                      税号：
+                  </view>
+                  <view class='weui-flex__item item3 invoicecontent'>
+                      {{tax_num}}
+                  </view>
+              </view>
+              <view class='weui-flex' wx:if="{{address!=null&&address!=''}}">
+                  <view class='weui-flex__item title'>
+                      收票地址：
+                  </view>
+                  <view class='weui-flex__item item3 invoicecontent'>
+                      {{name?name:''}} {{mobile?mobile:''}} {{address}}
+                  </view>
+              </view>
+              <view class='weui-flex' wx:if="{{email!=null&&email!=''}}">
+                  <view class='weui-flex__item title'>
+                      收票邮箱：
+                  </view>
+                  <view class='weui-flex__item item3 invoicecontent'>
+                      {{email}}
+                  </view>
+              </view>
+          </view>
+          <view class='orderinfo'>
+              <view class='weui-flex'>
+                  <view class='weui-flex__item infotitle'>
+                      发票金额：
+                  </view>
+                  <view class='weui-flex__item infovalue'>
+                      {{money}}元
+                  </view>
+              </view>
+          </view>
+    </view>
+</template> 
+<view class='wraper'>
+    <block wx:for="{{invoice}}" wx:key="id">
+        <template is="orderitem" data="{{...item}}"></template>
+    </block>
+    <view class='nodata' wx:if="{{invoice.length==0}}">
+      <image src='/images/nodata.png'></image>
+      <view class='tipinfo'>空空如也</view>
+    </view>
+</view>

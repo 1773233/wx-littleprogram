@@ -1,0 +1,258 @@
+/* pages/share/share.wxss */
+.wraper{
+  width: 100%;
+  background-color: #F4F5F7;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+}
+.background{
+  width: 100%;
+  height: auto;
+  position: relative;
+  opacity: 1;
+}
+.hide{
+  opacity: 0;
+}
+.background .backimg{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+}
+.background .backimg image{
+  width: 100%;
+}
+.background .qrcodewrap{
+  width: 86%;
+  height: auto;
+  position: relative;
+  left: 7%;
+  padding-bottom:65rpx;
+}
+.background .qrcodewrap .qrback{
+  width: 100%;
+  position: absolute;
+  top: 40rpx;
+  z-index: 99;
+}
+.background .qrcodewrap .qrcodetxtwrap{
+  position: relative;
+  top: 0rpx;
+  width: 100%;
+  z-index: 111;
+  text-align: center;
+}
+.background .descwrap{
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 999;
+}
+.background .qrcodewrap .qrcodetxtwrap .title{
+  width: 100%;
+  text-align: center;
+  height: 120rpx;
+  line-height: 120rpx;
+  font-weight: bold;
+}
+.background .qrcodewrap .qrcodetxtwrap .smalltitle{
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+.background .qrcodewrap .qrcodetxtwrap .qrcodeimg{
+  width: 40%;
+  height: auto;
+}
+.background .qrcodewrap .qrcodetxtwrap .sharenow{
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+  background-color: #131426;
+  border-radius: 30rpx;
+  margin:54rpx auto;
+}
+.textsmall{
+  text-align: center;
+  line-height: 80rpx;
+  color: #999;
+  font-size: 26rpx;
+}
+.textbig{
+  text-align: center;
+  line-height: 60rpx;
+  color: #555;
+  font-size: 32rpx;
+}
+.smalltextwraper{
+  display: inline-block;
+}
+.textgray{
+  color: #666;
+}
+.textskyblue{
+  color: #FE8702;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+.btn{
+  width: 80%;
+  height: 90rpx;
+  margin: 30rpx auto;
+  margin-bottom: 20rpx;
+}
+.btn .invite{
+  width: 100%;
+  height:90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: white;
+  font-size: 28rpx;
+  border-radius: 15rpx;
+  background-color: #131426;
+}
+.prize{
+  display: inline-block;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #333;
+}
+.prize .textskyblue{
+  margin: 0px;
+}
+
+
+
+.custompicker{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 996;
+  display: none; 
+}
+.custompicker.showpicker{
+  display: block;
+}
+.custompicker .emptyarea{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 997;
+  background: rgba(0, 0, 0, 0.7);
+}
+.custompicker .pickerwraper{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: white;
+  transition: all 0.4s ease;
+  z-index: 999;
+  padding-bottom: 30rpx;
+}
+.custompicker .pickercontent{
+  width: 100%;
+  overflow: hidden;
+}
+.custompicker .title{
+  height: 100rpx;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+}
+.custompicker .pickertitle{
+  font-size: 34rpx;
+  line-height: 100rpx;
+  color: #333;
+}
+.custompicker .pickercancel{
+  font-size: 30rpx;
+  line-height: 100rpx;
+  color: #333;
+  cursor: pointer;
+}
+.custompicker .pickeritems{
+  width: 100%;
+  overflow: hidden;
+}
+.custompicker .pickeritemswrap{
+  width: 100%;
+  height: auto;
+}
+.custompicker .shareitem{
+  width: 33.33%; 
+  height: 150rpx;
+  float: left;
+  margin:20rpx 0rpx;
+}
+.custompicker .shareitem .shareitemwrap{
+  width: 150rpx;
+  height: 130rpx;
+  position: relative;
+  text-align: center;
+  left:50%;
+  margin: 0 -50rpx;
+}
+.custompicker .shareitem .shareitemwrap .backwrap{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -50rpx;
+}
+.custompicker .shareitem .shareitempic{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 5rpx;
+  margin: 25rpx auto;
+}
+.custompicker .shareitem .shareitemname{
+  font-size: 24rpx;
+  color: #333;
+  line-height: 30rpx;
+  height: 30rpx;
+}
+.custompicker .clearfloat{
+  display: none;
+}
+.custompicker .clearfloat.show{
+  display: block;
+}

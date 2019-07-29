@@ -1,0 +1,542 @@
+/**index.wxss**/
+.wraper{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+  text-align: center;
+  padding: 0px;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+  text-align: center;
+  padding: 0px;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+  text-align: center;
+  padding: 0px;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+  text-align: center;
+  padding: 0px;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+  text-align: center;
+  padding: 0px;
+}
+.itemhf{
+  -webkit-box-flex:.5;
+  -webkit-flex:.5;
+  flex:.5;
+  text-align: center;
+  padding: 0px;
+}
+.wraper .map{
+  width: 100%;
+  height:100vh;
+  position: absolute;
+  left: 0rpx;
+  top:0rpx;
+  z-index: 99;
+}
+.wraper .map.showuc{
+  left:70%;
+}
+.wraper map{
+  width: 100%;
+  height: 100%;
+}
+
+/*登录start*/
+.loguserinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  clear: both;
+  margin-top: 100rpx;
+}
+.logtitle{
+  width: 100%;
+  height: auto;
+  padding-top: 200rpx;
+  text-align: center;
+}
+.logtitle image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.logtitle .logappname{
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  line-height: 100rpx;
+}
+.logtips{
+  font-size: 28rpx;
+  color: #999;
+  line-height: 50rpx;
+}
+.loggetuserinfo{
+  display: inline-block;
+  font-size: 30rpx;
+  color: #fff;
+  padding: 10rpx 30rpx;
+  background-color: #1aad19;
+}
+/*登录end*/
+/*顶部start*/
+.wraper .topwraper{
+  width: 100%;
+  height:100rpx;
+  box-sizing: border-box;
+  border-top: 1px solid #eee;
+  background-color: white;
+}
+.wraper .topwraper .citylocation{
+  display: inline-block;
+  height: 100rpx;
+}
+.wraper .topwraper .cityicon{
+  width: 26rpx;
+  height: 100rpx;
+  display: inline-block;
+}
+.wraper .topwraper .cityname{
+  display: inline-block;
+  height: 100rpx;
+  font-size: 32rpx;
+  line-height: 100rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  font-family: 'Arial Normal', 'Arial';
+  color: #666;
+}
+.wraper .topwraper .arrowdown{
+  width: 20rpx;
+  height: 100rpx;
+  display: inline-block;
+}
+.wraper .topwraper .tapwidthcion{
+  width:40rpx;
+  height: 42rpx;
+  margin: 30rpx auto;
+}
+.wraper .topwraper .cityicon cover-image{
+  width: 100%;
+  height: 32rpx;
+  margin-top: 35rpx;
+}
+.wraper .topwraper .arrowdown cover-image{
+  width: 100%;
+  height: 12rpx;
+  vertical-align: middle;
+  margin-top: 44rpx;
+}
+.wraper .topwraper .tapwidthcion cover-image{
+  width: 100%;
+  height: 100%;
+} 
+/*顶部end*/
+
+/*个人中心start*/
+.usercenter{
+  width: 70%;
+  height: 100vh;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 98;
+}
+.usercentermenu{
+  width: 100%;
+  float: left;
+  position: relative;
+  height: 100%;
+}
+.usercentermenu .usercenterback{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+}
+.avatarname{
+  width: 100%;
+  position: relative;
+  height:200rpx;
+  background-color: #2C2F40;
+}
+.avatarname .avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  margin-top: 50rpx;
+  float: left;
+  margin-bottom: 0rpx;
+  margin-left: 50rpx;
+}
+.username{
+  max-width: 260rpx;
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-top: 50rpx;
+  margin-left: 40rpx;
+  color: #fff;
+  font-size: 34rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.userinfoshortcut{
+  width: 100%;
+  height: 160rpx;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+}
+.itemvalue{
+  font-size: 40rpx;
+  color: #E4E6E5;
+  height: 80rpx;
+  line-height: 100rpx;
+}
+.itemvalue .bigmoney{
+  color: #E4E6E5;
+  height: 80rpx;
+  font-size: 40rpx;
+  display: inline-block;
+  line-height: 100rpx;
+}
+.itemvalue .smallmoney{
+  color: #E4E6E5;
+  height: 80rpx;
+  font-size: 30rpx;
+  display: inline-block;
+  line-height: 110rpx;
+}
+.itemtitle{
+  font-size: 24rpx;
+  color: #E4E6E5;
+  font-weight: lighter;
+  height: 80rpx;
+  line-height: 60rpx;
+}
+.itemtitle:active{
+  color: #FE8702;
+}
+.funcrmenu{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.funcmenuitem{
+  width: 100%;
+  height:80rpx;
+  text-align: center;
+}
+.funcmenuitem:active{
+  background-color: rgba(44,47,62,.8);
+}
+.itemicon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+  display: inline-block;
+}
+.itemname{
+  text-align: left;
+  font-weight: 400;
+  text-indent:0rpx;
+  font-size:28rpx;
+  line-height: 80rpx;
+  color: #E4E6E5;
+}
+/*个人中心end*/
+
+
+/*地图覆盖物start*/
+
+/*地图表面的覆盖按图标start*/
+.wraper .map .hideusercenter{
+  width: 90rpx;
+  height: 90rpx;
+  position: absolute;
+  top: 10rpx;
+  left: 30rpx;
+  border-radius: 45rpx;
+  z-index: 9999;
+}
+.wraper .map .mapbackcover{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0rpx;
+  left: 0rpx;
+  z-index: 99;
+  background-color: rgba(10,10,10,.3);
+}
+.wraper .map .userlocation{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -65rpx;
+  left: 50%;
+  margin-left: -40rpx;
+}
+.wraper .map .getlocation{
+  width: 90rpx;
+  height: 90rpx;
+  position: absolute;
+  right:20rpx;
+  bottom: 460rpx;
+}
+.wraper .map .getlocation.posdown{
+  bottom: 240rpx;
+}
+.wraper .map .mappointinfo{ 
+  width: 360rpx;
+  height: 120rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -175rpx;
+  left: 50%;
+  margin-left: -180rpx;
+  text-align: center;
+}
+.wraper .map .mappointinfo .pointinfoback{
+  width: 100%;
+  height: 120rpx;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9;
+}
+.wraper .map .mappointinfo .pointinfotextwrap{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  z-index: 12;
+  text-align: center;
+}
+.wraper .map .mappointinfo .pointinfotext{
+  font-size: 24rpx;
+  white-space: initial;
+  width: 100%;
+  height: 100%;
+  text-align: center !important;
+  color: #333;
+  line-height: 110rpx;
+  box-sizing: border-box;
+}
+.wraper .map .cancelorderinput{
+  width: 90rpx;
+  height: 90rpx;
+  margin-left: 20rpx;
+  margin-top: 5rpx; 
+}
+.hide{
+  display: none;
+}
+/*地图表面的覆盖按图标end*/
+
+
+
+/*地图表面的帮我送帮我买地址栏覆盖物start*/
+.wraper .map .mapbotwrap{
+  width: 100%;
+  height: 392rpx;
+  overflow: hidden;
+  position: absolute;
+  bottom: 90rpx;
+}
+.wraper .map .mapbotwrap .mapbotback{
+  position: absolute;
+  top:0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100%;
+  z-index:9;
+}
+.wraper .map .adwrap{
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+  height: 90rpx;
+  background-color: #f8f8f8;
+}
+.wraper .map .adwrap .back{
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+}
+.wraper .map .adwrap .adinfo{
+  color: #333;
+  font-size: 26rpx;
+  line-height: 90rpx;
+  text-align: center;
+  width: 70%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  z-index: 999;
+}
+.wraper .map .adwrap .adbtn{
+  float: left;
+  width: 30%;
+  position: absolute;
+  top: 0rpx;
+  z-index: 999;
+  right: 0rpx;
+  text-align: center;
+  line-height:90rpx;
+  color: #FE8702;
+  font-size: 26rpx;
+  font-weight: bold
+}
+.wraper .map .menu{
+  position: relative;
+  top:40rpx;
+  z-index: 12;
+  width: 100%;
+  height: 100rpx;
+}
+.wraper .map .menu .tap{
+  width: 100rpx;
+  float: left;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.wraper .map .menu #send{
+  position: relative;
+  left: 50%;
+  margin-left: -150rpx;
+}
+.wraper .map .menu #buy{
+  position: relative;
+  left: 50%;
+  margin-left:50rpx;
+}
+.wraper .map .menu .tapplaceholder{
+  width: 100rpx;
+  float: left;
+  height: 2rpx;
+  background-color: #FE8702;
+  margin-left: 40rpx;
+  opacity: 0;
+}
+.wraper .map .menu .sendholder{
+  position: relative;
+  left: 50%;
+  margin-left:-150rpx;
+}
+.wraper .map .menu .buyholder{
+  position: relative;
+  left: 50%;
+  margin-left:50rpx;
+}
+.clearboth{
+  clear: both;
+}
+.wraper .map .menu .tap.active{
+  font-weight: bold;
+  color: #FE8702;
+}
+.wraper .map .menu .tapplaceholder.active{
+  opacity: 1;
+}
+.wraper .map .posdisplay{
+  position: relative;  
+  top: 40rpx;
+  z-index: 12;  
+  width: 100%;
+  height: 252rpx;
+}
+.wraper .map .posdisplay .addresswrap{
+  width: 100%;
+  height: 125rpx;
+  line-height: 125rpx;
+  font-size: 28rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.wraper .map .posdisplay .placeholder{
+  width: 80%;
+  margin-left: 10%;
+  height: 2rpx;
+  background-color: #ccc;
+}
+.wraper .map .posdisplay .addressicon{
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 36rpx;
+  margin: 44rpx auto;
+}
+.wraper .map .posdisplay .addressicon cover-image{
+  width: 100%;
+  height: 100%;
+}
+.wraper .map .posdisplay .addresscontent{
+  width: 100%;
+  height: 125rpx;
+  line-height: 125rpx;
+  color: #666;
+  font-size: 30rpx;
+  text-align: left;
+}
+.wraper .map .posdisplay .detailinfo{
+  width: 100%;
+  height: 62rpx;
+  text-align: left;
+  font-size: 28rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #333;
+  white-space: nowrap;
+}
+.wraper .map .posdisplay .detailinfo.infotop{
+  line-height: 80rpx;
+}
+.wraper .map .posdisplay .detailinfo.infobot{
+  line-height: 40rpx;
+}
+.arrowright{
+  width: 12rpx;
+  height:26rpx;
+  margin-top: 52rpx;
+  float: right;
+  margin-right: 30rpx;
+}
+.arrowright cover-image{
+  width: 100%;
+  height: 100%;
+}
+/*地图表面的帮我送帮我买地址栏覆盖物end*/
+/*地图覆盖物end*/

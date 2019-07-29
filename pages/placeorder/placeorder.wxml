@@ -1,0 +1,343 @@
+<!--pages/placeorder/placeorder.wxml-->
+<view class='wraper'>
+    <view class='bottomwraper {{bottomwraperswitch==true?"hide":""}}'>
+        <view class='detailposinfo'>
+            <view class='detailposinfowrap'>
+                <view class='goodstype'>
+                    <view class='weui-flex'>
+                        <block wx:for="{{goodstypes}}" wx:key="item.id">
+                            <view class='weui-flex__item typeitem'>
+                                <view class='itemwraper' bindtap='goodstypeselect' data-name="{{item.title}}">
+                                    <image src="{{item.select==true?item.icon_click:item.icon_no_click}}">
+                                    </image>
+                                    <view class="{{item.select==true?'colored':''}}">{{item.title}}</view>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                    <view class='needmessage' wx:if="{{selectedservicetype==2}}">
+                          <textarea class="weui-textarea" bindinput="needmessageinput" value="{{needmessage}}" placeholder='请填写您的需求' />  
+                    </view>
+                </view>
+                <view class='detailpositem borderbot'>
+                    <view class='weui-flex' data-id='0' bindtap='selectaddress'>
+                        <view class='weui-flex__item itemtitle item2' wx:if="{{selectedservicetype==1}}">
+                            寄出地址:
+                        </view>
+                        <view class='weui-flex__item itemtitle item2' wx:else>
+                            购买地址:
+                        </view>
+                        <view class='weui-flex__item item6 itemcontent'>
+                            <view wx:if="{{!sendPosinfoSwitch}}" class='addresstip'>{{fromaddress}}</view>
+                            <view class='addressdetail' wx:else>
+                                <view class='detailinfo infotop'>{{selectedSendPosinfo.address}}</view>
+                                <view class='detailinfo infobot'>
+                                    {{selectedSendPosinfo.sender==null?"":selectedSendPosinfo.sender}} {{selectedSendPosinfo.floor}} {{selectedSendPosinfo.tel==null?"":selectedSendPosinfo.tel}}
+                                </view>
+                                <image class='ifcall' wx:if="{{selectedservicetype==1}}" src='{{sendifcall==1?"/images/call.png":"/images/nocall.png"}}'></image>
+                            </view>
+                        </view>
+                        <view class='weui-flex__item'>
+                            <view class='arrowright'>
+                                <image src='/images/arrowright.png'></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='detailpositem borderbot'>
+                    <view class='weui-flex' data-id='1' bindtap='selectaddress'>
+                        <view class='weui-flex__item itemtitle item2'>
+                            送达地址:
+                        </view>
+                        <view class='weui-flex__item item6 itemcontent'>
+                            <view wx:if="{{!receivePosinfoSwitch}}" class='addresstip'>{{sendtoaddress}}</view>
+                            <view class='addressdetail' wx:else>
+                                <view class='detailinfo infotop'>{{selectedreceivePosinfo.address}}</view>
+                                <view class='detailinfo infobot'>
+                                    {{selectedreceivePosinfo.sender}} {{selectedreceivePosinfo.floor}} {{selectedreceivePosinfo.tel}}
+                                </view>
+                                <image class='ifcall' src='{{receiveifcall==1?"/images/call.png":"/images/nocall.png"}}'></image>
+                            </view>
+                        </view>
+                        <view class='weui-flex__item'>
+                            <view class='arrowright'>
+                                <image src='/images/arrowright.png'></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='detailpositem borderbot'>
+                    <view class='weui-flex' bindtap='navtodiscount'>
+                        <view class='weui-flex__item itemtitle item2'>
+                            优惠:
+                        </view>
+                        <view class='weui-flex__item item6 itemcontent'>
+                            {{ticketprice!=0?"已优惠"+ticketprice+"元":discounttip}}
+                        </view>
+                        <view class='weui-flex__item'>
+                            <view class='arrowright'>
+                                <image src='/images/arrowright.png'></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='detailpositem borderbot'>
+                    <view class='weui-flex' data-picktype="time" bindtap='activecustompicker'>
+                        <view class='weui-flex__item itemtitle item2' wx:if="{{selectedservicetype==1}}">
+                            取件时间:
+                        </view>
+                        <view class='weui-flex__item itemtitle item2' wx:else>
+                            购买时间:
+                        </view>
+                        <view class='weui-flex__item item6 itemcontent'>
+                            <text wx:if="{{sendtime=='立即'}}">{{selectedservicetype==1?"立即取件":"立即购买"}}</text>
+                            <text wx:else class='active'>{{sendtime.day}}{{sendtime.hour}}点{{sendtime.minut}}分</text>
+                        </view>
+                        <view class='weui-flex__item'>
+                            <view class='arrowright'>
+                                <image src='/images/arrowright.png'></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='detailpositem borderbot'>
+                    <picker bindchange="bindweightChange" value="{{weightindex==-1?0:weightindex}}" range="{{weightlist}}">
+                        <view class='weui-flex'>
+                                <view class='weui-flex__item itemtitle item2'>
+                                    重量:
+                                </view>
+                                <view class='weui-flex__item item6 itemcontent'>
+                                    <text wx:if="{{weightindex==-1}}">请选择物品重量</text>
+                                    <text wx:else class='active'>{{weightlist[weightindex]}}</text>
+                                </view>
+                                <view class='weui-flex__item'>
+                                    <view class='arrowright'>
+                                        <image src='/images/arrowright.png'></image>
+                                    </view>
+                                </view>
+                        </view>
+                    </picker>
+                </view>
+                <view class='detailpositem borderbot' wx:if="{{selectedservicetype==2}}">
+                    <view class='weui-flex'>
+                        <view class='weui-flex__item itemtitle item2'>
+                            垫付费:
+                        </view>
+                        <view class='weui-flex__item item6 itemcontent'>
+                            <input type='digit' class='active' bindinput='goodspriceinput' placeholder='请输入您垫付的商品费用'></input>
+                        </view>
+                        <view class='weui-flex__item itemhf'>
+                        </view>
+                    </view>
+                </view>
+                <view class='detailpositem borderbot'>
+                    <view class='weui-flex' data-picktype="gratuity" bindtap='activecustompicker'>
+                        <view class='weui-flex__item itemtitle item2'>
+                            小费:
+                        </view>
+                        <view class='weui-flex__item item6 itemcontent'>
+                            <text wx:if="{{gratuity==0}}">加小费抢单更快</text>
+                            <text wx:else class='active'>{{gratuity}}元</text>
+                        </view>
+                        <view class='weui-flex__item'>
+                            <view class='arrowright'>
+                                <image src='/images/arrowright.png'></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='detailpositem borderbot'>
+                    <view class='weui-flex'>
+                        <view class='weui-flex__item itemtitle item2'>
+                            备注:
+                        </view>
+                        <view class='weui-flex__item item6 itemcontent'>
+                            <input type='text' class='active' bindinput='messageinput' value='{{leavemessage}}' placeholder='请输入您的备注信息'></input>
+                        </view>
+                        <view class='weui-flex__item itemhf'>
+                        </view>
+                    </view>
+                </view>
+                <view class='placeholder'></view>
+            </view>
+        </view>
+    </view>
+    <view class='subtotal'>
+        <view class='weui-flex'>
+            <view class='weui-flex__item moneysub'>
+                共 <text>{{totalmoney}}</text> 元
+            </view>
+            <view class='weui-flex__item'>
+                <view class='pricedetail' bindtap='topricedetail'>{{pricedetail}}</view>
+            </view>
+            <view class='weui-flex__item fromidplace'>
+                <form bindsubmit="formidSubmit" report-submit="true">
+                    <button formType="submit" class='formidbtn'>
+                          <view class='throughbtn'>
+                              <form bindsubmit="formidSubmit" report-submit="true">
+                                  <button formType="submit" class='formidbtn'>
+                                        <view class='throughbtn'>
+                                          <form bindsubmit="formidSubmit" report-submit="true">
+                                              <button formType="submit" class='formidbtn'>
+                                                    <view class='throughbtn'>
+                                                      <form bindsubmit="formidSubmit" report-submit="true">
+                                                          <button formType="submit" class='formidbtn'>
+                                                                <view class='throughbtn'>
+                                                                  <form bindsubmit="formidSubmit" report-submit="true">
+                                                                      <button formType="submit" class='formidbtn'>
+                                                                            <view bindtap='placeorder' class='throughbtn {{orderactive==true?"valid":""}}'>
+                                                                              下单
+                                                                            </view>
+                                                                      </button>
+                                                                  </form>
+                                                                </view>
+                                                          </button>
+                                                      </form>
+                                                    </view>
+                                              </button>
+                                          </form>
+                                        </view>
+                                  </button>
+                              </form>
+                          </view>
+                    </button>
+                </form>
+            </view>
+        </view>
+    </view>
+    <view class='custompicker {{showcustompicker?"showpicker":""}}'>
+        <view class='emptyarea' bindtap='hidecustompicker'></view>
+        <view class='pickerwraper'>
+            <view class='pickercontent'>
+                <view class='title weui-flex'>
+                    <view class='weui-flex__item'></view>
+                    <view class='weui-flex__item item4 pickertitle'>
+                        {{pickertype=="time"?"选择时间":"小费"}}
+                    </view>
+                    <view class='weui-flex__item pickercancel' bindtap='hidecustompicker'>
+                        取消
+                    </view>
+                </view>
+                <view class='specialvalue {{pickertype=="time"?"":"hide"}}' bindtap='specialtimeselect' wx:if="{{selectedservicetype==1}}">
+                    立即取件
+                </view>
+                <view class='specialvalue {{pickertype=="time"?"":"hide"}}' bindtap='specialtimeselect' wx:else>
+                    立即购买
+                </view>
+                <view class='pickeritems'>
+                    <view wx:if='{{pickertype=="time"}}'>
+                        <picker-view indicator-style="height: 90rpx;" 
+                        class='timepickercontent' value="{{timepickervalue}}" bindchange="bindtimepickerChange">
+                            <picker-view-column>
+                              <view wx:for="{{days}}" wx:key="{{days}}" class='timepickeritem'>{{item}}</view>
+                            </picker-view-column>
+                            <picker-view-column>
+                              <view wx:for="{{hours}}" wx:key="{{hours}}" class='timepickeritem'>{{item}}点</view>
+                            </picker-view-column>
+                            <picker-view-column>
+                              <view wx:for="{{minuts}}" wx:key="{{minuts}}" class='timepickeritem'>{{item}}分</view>
+                            </picker-view-column>
+                        </picker-view>
+                    </view>
+                    <view class='gratuitypickercontent' wx:else>
+                        <block wx:for="{{gratuities}}" wx:key="item.id">
+                              <view class='gratuityitem {{item.id==selectedGratuityindex?"active":""}}' 
+                              data-value="{{item.id}}" bindtap='gratuityselect'>￥ {{item.value}}</view>
+                        </block>
+                        <view class='clearfloat'></view>
+                        <view class='customgratuity'>
+                            <view wx:if="{{hidegratuityinput}}" class='customtap' bindtap='activegratuityinput'>其它金额</view>
+                            <view wx:else class='customgratuityinput weui-flex'>
+                                <view class='weui-flex__item customgratuityinputtitle'>输入金额：</view>
+                                <input class='weui-flex__item' type='number' bindinput='gratuityinput'></input>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='pickersub' bindtap='confrimgratuity'>确定</view>
+            </view>
+        </view>
+    </view>
+    <view class='custompicker {{selectrechargetype?"showpicker":""}}'>
+        <view class='emptyarea'></view>
+        <view class='pickerwraper'>
+            <view class='pickercontent'>
+                <view class='title weui-flex'>
+                    <view class='weui-flex__item'></view>
+                    <view class='weui-flex__item item4 pickertitle'>
+                        选择支付方式
+                    </view>
+                    <view class='weui-flex__item pickercancel' bindtap='cancelpay'>
+                        取消
+                    </view>
+                </view>
+                <view class='pickeritems'>
+                    <view class='pickeritemswrap'>
+                        <block wx:for="{{rechargetypes}}" wx:key="id">
+                            <view class='rechargeitem' data-value="{{item.id}}" bindtap='rechargetypeselected'>
+                                <view class='rechargeitemwrap weui-flex'>
+                                    <view class='weui-flex__item'>
+                                        <image class='typeicon' src='{{item.url}}'></image>
+                                    </view>
+                                    <view class='weui-flex__item item4' wx:if="{{item.id==0}}">
+                                        <view class='rechargetypename'>{{item.name}}
+                                          <text wx:if="{{banlance>=totalmoney}}"> 可用余额{{banlance}}元</text>
+                                          <text class='highlight' wx:else> 可用余额不足</text>
+                                        </view>
+                                    </view> 
+                                    <view class='weui-flex__item item4' wx:else>
+                                        <view class='rechargetypename'>{{item.name}}
+                                        </view>
+                                    </view>
+                                    <view class='weui-flex__item'>
+                                        <image class='selecticon' src='/images/u1407.png' wx:if="{{!item.rechgetypeselected}}"></image>
+                                        <image class='selecticon' src='/images/icheck.png' wx:if="{{item.rechgetypeselected}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+                <view class='pickersub' bindtap='paynow'>确认支付</view>
+            </view>
+        </view>
+    </view>
+    <view class='paypwd' wx:if="{{showPayPwdInput}}">
+          <view class='bg_layer'></view>
+          <view class='input_main'>
+            <view class='input_title'>
+                <view class='input_back' catchtap='hidePayLayer'><text></text></view>
+                <text>输入支付密码</text>
+            </view>
+            <view class='input_tip'><text>即将付款￥{{totalmoney}}元,请输入支付密码</text></view>
+            <view class='input_row' catchtap='getFocus'>
+                <view class='pwd_item' wx:for='{{6}}' wx:key='item' wx:for-index='i'>
+                    <text wx:if='{{pwdVal.length>i}}'></text>
+                </view>
+            </view>
+            <view class='forget_pwd'>
+              <text class="pwdtipinfo" wx:if="{{pwderr==true}}">{{pwderrmsg}}</text>
+              <text class='forget' catchtap='tochangepassword'>{{pwdlocked==true?"修改密码":"忘记密码"}}</text>
+            </view>
+            <input class='input_control' password="true" type='number' focus='{{payFocus}}' value="{{pwdVal}}" cursor-spacing="50" bindinput='inputPwd' maxlength='6'/>
+         </view>
+    </view>
+    
+    <view class='paypwd' wx:if="{{showSetPwdInput}}">
+          <view class='bg_layer'></view>
+          <view class='input_main'>
+            <view class='input_title'>
+                <view class='input_back' catchtap='hideSetLayer'><text></text></view>
+                <text>设置支付密码</text>
+            </view>
+            <view class='input_tip'><text>请设置您的支付密码</text></view>
+            <view class='input_row' catchtap='getsetFocus'>
+                <view class='pwd_item' wx:for='{{6}}' wx:key='item' wx:for-index='i'>
+                    <text wx:if='{{setpwdVal.length>i}}'></text>
+                </view>
+            </view>
+            <input class='input_control' password="true" type='number' focus='{{setFocus}}' cursor-spacing="50" bindinput='inputsetPwd' maxlength='6'/>
+         </view>
+    </view>
+</view>
+

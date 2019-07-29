@@ -1,0 +1,105 @@
+/* pages/moneydetail/moneydetail.wxss */
+.wraper{
+  width: 100%;
+  overflow: hidden;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+  text-align: center;
+  padding: 0px;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+  text-align: center;
+  padding: 0px;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+  text-align: center;
+  padding: 0px;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+  text-align: center;
+  padding: 0px;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+  text-align: center;
+  padding: 0px;
+}
+.itemhf{
+  -webkit-box-flex:.5;
+  -webkit-flex:.5;
+  flex:.5;
+  text-align: center;
+  padding: 0px;
+}
+.detailitem{
+  height: 120rpx;
+  width: 100%;
+}
+.title{
+  height: 60rpx;
+  line-height: 70rpx;
+  color: #333;
+  font-size: 28rpx;
+  text-align: left;
+  text-indent: 15rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+.date{
+  height: 60rpx;
+  line-height: 50rpx;
+  color: #333;
+  font-size: 24rpx;
+  text-align: left;
+  width: 100%;
+  text-indent: 15rpx;
+}
+.costmoney{
+  line-height: 120rpx;
+  font-size: 30rpx;
+  color: #666;
+  text-align: center;
+}
+.placehoder{
+  height: 3rpx;
+  width: 100%;
+}
+.borderbtom{
+  height: 100%;
+  background-color: #eee;
+}
+.nodata{
+  width: 100%;
+  height: 60vh;
+  text-align: center;
+}
+.nodata image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 30vh;
+  border-radius: 50rpx;
+}
+.nodata .tipinfo{
+  font-size: 28rpx;
+  color: #999;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,63 @@
+<!--pages/riderdetail/riderdetail.wxml-->
+<view class='wraper'>
+    <view class='sender weui-flex' wx:if="{{rider.id!=null}}">
+        <view class='weui-flex__item avatar'>
+            <image src='{{rider.headimg?rider.headimg:"/images/logo.png"}}'></image>
+        </view>
+        <view class='weui-flex__item item3'>
+            <view class='senderinfo'>
+                <text>{{rider.name}} {{rider.sex==1?"男":"女"}}</text>
+            </view>
+            <view class='satisfiction'>
+                <text>满意度：{{rider.star*100}}%</text>
+            </view>
+        </view>
+        <view class='weui-flex__item'>
+            <view class='call' bindtap='makecall'>
+                <image src='/images/phonecall.png'></image>
+            </view>
+        </view>
+    </view>
+    <view class='tiptitle'>
+      <view class='leftbar'></view>
+      <view class='tipcontent'>热门评价</view>
+    </view>
+    <view class='commentlist' wx:if="{{comments.length!=0}}">
+        <view class='commentwrap' wx:for="{{comments}}" wx:key="id">
+            <view class='weui-flex titleinfo'>
+                <view class='weui-flex__item'>
+                    <image class='useravatar' src='/images/logo.png'></image>
+                    <text class='uname'>匿名用户</text>
+                </view>
+                <view class='weui-flex__item'>
+                  <view class='starlist'>
+                    <image wx:if="{{item.star>=1}}" src='/images/xx.png'></image>
+                    <image wx:if="{{item.star>=2}}" src='/images/xx.png'></image>
+                    <image wx:if="{{item.star>=3}}" src='/images/xx.png'></image>
+                    <image wx:if="{{item.star>=4}}" src='/images/xx.png'></image>
+                    <image wx:if="{{item.star>=5}}" src='/images/xx.png'></image>
+                  </view>
+                </view>
+                <view class='weui-flex__item commenttime'>
+                  {{item.create_time}}
+                </view>
+            </view>
+            <view class='content'>
+              <view class='commentwords'>{{item.content}}</view>
+              <view class='images'>
+                  <block wx:for="{{item.commentimgs}}" wx:for-item="imgitem" wx:key="*this">
+                      <image class='commentimage' bindtap='previewimg' data-value="{{imgitem}}" data-allvalue="{{item.commentimgs}}" src='{{imgitem}}'></image>                  
+                  </block>
+                  <view class='clearfloat'></view>
+              </view>
+            </view>
+        </view>
+        <view class='morecomment' wx:if="{{!getmore}}">
+            <view class='btn' bindtap='getallcomment'>更多评价</view>
+        </view>
+    </view>
+    <view class='nodata' wx:if="{{comments.length==0}}">
+      <image src='/images/nodata.png'></image>
+      <view class='tipinfo'>暂无评价</view>
+    </view>
+</view>

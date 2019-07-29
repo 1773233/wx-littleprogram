@@ -1,0 +1,164 @@
+/* pages/addressmanage/addressmanage.wxss */
+page{
+  background-color: #f5f5f5;
+}
+.wraper{
+  width: 100%;
+  height: auto;
+  padding-top: 20rpx;
+  box-sizing:border-box;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+}
+.item7{
+  -webkit-box-flex:7;
+  -webkit-flex:7;
+  flex:7;
+  padding: 0px;
+}
+.item8{
+  -webkit-box-flex:8;
+  -webkit-flex:8;
+  flex:8;
+}
+.itemhf{
+  -webkit-box-flex:.5;
+  -webkit-flex:.5;
+  flex:.5;
+}
+.wraper .addwrap{
+  width: 100%;
+  height: 85vh;
+}
+.wraper .detailitem{
+  width: 100%;
+  height: auto;
+  background-color:#fff;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.wraper .detailitem .personinfowrap{
+  height: 100rpx;
+}
+.wraper .detailitem .textleft{
+  text-align: left;
+}
+.wraper .detailitem .personname{
+  color: #333;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 40rpx;
+}
+.wraper .detailitem .textright{
+  text-align: right;
+}
+.wraper .detailitem .personinfo{
+  color: #333;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-right: 40rpx;
+}
+.wraper .detailitem .addressdetail{
+  width: 94%;
+  margin-left: 3%;
+  height: auto;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.wraper .detailitem .detailcontent{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+.wraper .btn{
+  width: 100%;
+  height: 90rpx;
+  position: absolute;
+  bottom: 20rpx;
+}
+.wraper .btn .addnewaddress{
+  width: 80%;
+  margin-left: 10%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #131426;
+  border-radius: 50rpx;
+  font-size: 28rpx;
+}
+.wraper .noaddress{
+  width: 100%;
+  height: 80vh;
+  text-align: center;
+}
+.wraper .noaddress .nodata{
+  width: 180rpx;
+  height: 200rpx;
+  margin-top: 35vh;
+}
+.wraper .noaddress .tipinfo{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+}
+.wraper .controlls{
+  height: 80rpx;
+}
+.wraper .icons{
+  text-align: center;
+}
+.wraper .controlls .icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+}
+.wraper .controlls .name{
+  color: #666;
+  font-size: 30rpx;
+  text-align: left;
+  float: left;
+  line-height: 80rpx;
+}
+.wraper .controlls .highlight{
+  color: #fe8b03;
+}
+.wraper .controlls .conicon{
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+}

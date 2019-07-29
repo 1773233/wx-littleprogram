@@ -1,0 +1,58 @@
+<!--pages/shareprize/shareprize.wxml-->
+<template name="moneydetail">
+    <view class='weui-flex detailitem'>
+        <view class='weui-flex__item avatar'>
+          <image src='{{headimg}}'></image>
+        </view>
+        <view class='weui-flex__item item6'>
+            <view class='costtitle'>{{username}}</view>
+            <view class='date'>{{create_time}}</view>
+        </view>
+        <view class='weui-flex__item costmoney'>
+            ￥{{money}}
+        </view>
+    </view>
+    <view class='weui-flex placehoder'>
+        <view class='weui-flex__item item6 borderbtom'>
+        </view>
+        <view class='weui-flex__item borderbtom'>
+        </view>
+    </view>
+</template>
+<view class='wraper'>
+    <view class='totalcount'>
+        <view class='prizecount'>
+            <view class='bigtitle'>已得奖励</view>
+            <view class='textskyblue'>
+                <text class='prizecount'>{{totalmoney}}</text>
+                <text class='unit big'>元</text>
+            </view>
+        </view>
+        <view class='sharecount weui-flex'>
+              <view class='weui-flex__item'>
+                  <view class='title'>已邀请</view>
+                  <view class='textskyblue'>
+                      <text class='count'>{{invNum}}</text>
+                      <text class='unit'>人</text>
+                  </view>
+              </view>
+              <view class='weui-flex__item'>
+                  <view class='title'>已完成</view>
+                  <view class='textskyblue'>
+                      <text class='count'>{{invSuNum}}</text>
+                      <text class='unit'>人</text>
+                  </view>
+              </view> 
+        </view>
+    </view>
+    <view class="weui-cells__title">成功邀请人数</view>
+    <view class='costlist'>
+        <block wx:for="{{moneydetail}}" wx:key="*this">
+            <template is="moneydetail" data="{{...item}}"></template>
+        </block>
+        <view class='nodata' wx:if="{{moneydetail.length==0}}">
+          <image src='/images/nodata.png'></image>
+          <view class='tipinfo'>暂无数据</view>
+        </view>
+    </view>
+</view>

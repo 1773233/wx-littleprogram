@@ -1,0 +1,185 @@
+/* pages/comment/comment.wxss */
+.wraper{
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 50rpx;
+  background-color:#f5f5f5;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+  text-align: center;
+  padding: 0px;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+  text-align: center;
+  padding: 0px;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+  text-align: center;
+  padding: 0px;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+  text-align: center;
+  padding: 0px;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+  text-align: center;
+  padding: 0px;
+}
+.wraper .commenttitle{
+  height: 160rpx;
+  background-color: #fff;
+}
+.wraper .headimg{
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+}
+.wraper .headimg image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+}
+.wraper .info{
+  height: 160rpx;
+  line-height: 160rpx;
+  font-size: 32rpx;
+  text-align: left;
+  text-indent: 30rpx;
+  font-weight: 600;
+  letter-spacing: 5rpx;
+  color: #000;
+}
+.wraper .call{
+  width: 70rpx;
+  height: 70rpx;
+  margin-top:45rpx;
+}
+.wraper .call image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 45rpx;
+}
+.wraper .commentcontent{
+  width: 100%;
+  height: 240rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #eee;
+  box-sizing: border-box;
+  padding:10rpx;
+}
+.wraper .commentcontent textarea{
+  width: 100%;
+  height: 100%;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.wraper .commentcontent .holderstyle{
+  color: #bbb;
+}
+.wraper .imagesarea{
+  width: 100%;
+  background-color: #fff;
+  height: auto;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  padding-bottom: 20rpx;
+}
+.wraper .imagesarea .inlineblock{
+  display: inline-block;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+  position: relative;
+}
+.wraper .imagesarea image.photo{
+  width: 140rpx;
+  height: 140rpx;
+  border: 1px solid #eee;
+}
+.wraper .imagesarea image.close{
+  position: absolute;
+  top: -2rpx;
+  right: -2rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.clearfloat{
+  clear: both;
+}
+.wraper .addarea{
+  width: 100%;
+  height: 190rpx;
+  background-color: #FFF;
+}
+.wraper .addimage{
+  width: 180rpx;
+  height: 180rpx;
+  text-align: center;
+  border: 1px dashed #ddd;
+  margin-left: 20rpx;
+}
+.wraper .addimage image{
+  width:100rpx;
+  height: 100rpx;
+  margin-top: 20rpx;
+  margin-bottom: -40rpx;
+}
+.wraper .addimage text{
+  display: inline-block;
+  height: 80rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.wraper .stars{
+  height: 110rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.wraper .stars .title{
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: left;
+  text-indent: 10rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.wraper .stars .star{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.wraper .stars .star image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 30rpx;
+}
+.submit{
+  width: 80%;
+  margin-left: 10%;
+  height: 80rpx;
+  border-radius: 20rpx;
+  background-color: #131426;
+  font-size: 26rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 50rpx;
+  color: #fff;
+}

@@ -1,0 +1,256 @@
+/* pages/addressselect/addressselect.wxss */
+.wraper{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing:border-box;
+  position: relative;
+}
+.item2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  flex:2;
+}
+.item3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  flex:3;
+}
+.item4{
+  -webkit-box-flex:4;
+  -webkit-flex:4;
+  flex:4;
+}
+.item5{
+  -webkit-box-flex:5;
+  -webkit-flex:5;
+  flex:5;
+}
+.item6{
+  -webkit-box-flex:6;
+  -webkit-flex:6;
+  flex:6;
+}
+.item7{
+  -webkit-box-flex:7;
+  -webkit-flex:7;
+  flex:7;
+  padding: 0px;
+}
+.item8{
+  -webkit-box-flex:8;
+  -webkit-flex:8;
+  flex:8;
+}
+.wraper .addwrap{
+  width: 100%;
+  height:40vh;
+}
+.wraper .detailitem{
+  width: 100%;
+  height: auto;
+  background-color:#fff;
+}
+.wraper .detailitem .personinfowrap{
+  height: 80rpx;
+}
+.wraper .detailitem .textleft{
+  text-align: left;
+}
+.wraper .detailitem .personname{
+  color: #333;
+  font-size: 30rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-left: 40rpx;
+}
+.wraper .detailitem .textright{
+  text-align: right;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+}
+.wraper .detailitem .personinfo{
+  color: #333;
+  font-size: 30rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  float: right;
+}
+.wraper .detailitem .addressdetail{
+  width: 94%;
+  margin-left: 3%;
+  height: auto;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.wraper .detailitem .addressdetail .detailcontent{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #666;
+} 
+.wraper .menu{
+  width: 100%;
+  height: 100rpx;
+  text-align: left;
+  background-color: #eee;
+}
+.wraper .menu text{
+  font-size: 30rpx;
+  color: #333;
+  line-height: 100rpx;
+  margin-left: 40rpx;
+}
+.wraper .menu .addnewaddress{
+  width: 150rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+  font-size: 28rpx;
+  background-color: #131426;
+  text-align: center;
+  float: right;
+  margin-top: 15rpx;
+  margin-right: 20rpx;
+  border-radius: 5rpx;
+}
+.wraper .noaddress{
+  width: 100%;
+  height: 30vh;
+  margin-top: 15vh;
+  text-align: center;
+}
+.wraper .noaddress .nodata{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.wraper .noaddress .tipinfo{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.wraper .content{
+  width: 94%;
+  margin-left: 3%;
+  overflow: hidden;
+}
+.wraper .infowraper{
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 20rpx;
+}
+.wraper .infoitem{
+  width: 94%;
+  margin-left: 3%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  height: 120rpx;
+}
+.wraper .infoitem .circle{
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 36rpx;
+  box-sizing: border-box;
+  margin-top: 38rpx;
+}
+.wraper .infoitem .circle image{
+  width: 100%;
+  height: 100%;
+}
+.wraper .infoitem.last{
+  border-bottom: none;
+}
+.wraper .itemcontent{
+  line-height: 120rpx;
+}
+.wraper .itemicon{
+  text-align: left;
+}
+.wraper .itemicon image{
+  width: 38rpx;
+  height: 40rpx;
+  margin-top: 40rpx;
+}
+.wraper .itemcontent{
+  line-height: 120rpx;
+  height: 120rpx;
+  text-align: left;
+  font-size: 30rpx;
+  color: #333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.wraper .ifcalltip{
+  font-size: 28rpx;
+  color: #666;
+  line-height: 120rpx;
+}
+.wraper .ifcall{
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.wraper .itemcontent input{
+  line-height: 120rpx;
+  height: 120rpx;
+  text-align: left;
+  font-size: 30rpx;
+  color: #333;
+}
+.wraper .subbtn{
+  width: 160rpx;
+  height: 70rpx;
+  margin-right: 40rpx;
+  background-color: #fff;
+  line-height: 70rpx;
+  text-align: center;
+  font-size:30rpx;
+  border-radius: 10rpx;
+  color: #333;
+  margin-top: 25rpx;
+  float: right;
+  border: 1px solid #131426;
+}
+.wraper .saveadd{
+  float: left;
+  width: 220rpx;
+  height: 40rpx;
+  color: #666;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 40rpx;
+  margin-bottom:40rpx;
+}
+.wraper .saveadd image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 54rpx;
+}
+.wraper .holderstyle{
+  color: #999;
+}
+.arrowright{
+  width: 12rpx;
+  height:26rpx;
+  margin-top: 40rpx;
+  float: right;
+  margin-right: 15rpx;
+}
+.arrowright image{
+  width: 100%;
+  height: 100%;
+}

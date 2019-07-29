@@ -1,0 +1,25 @@
+<!--pages/helpdetail/helpdetail.wxml-->
+<import src="../wxParse/wxParse.wxml"/>
+<view class='wraper'>
+  <view class='title' wx:if="{{title!=null}}">{{title}}</view>
+  <view class='content' wx:if="{{hpid!=null}}">
+    <template is="wxParse" data="{{wxParseData:ques.nodes}}"/>
+  </view>
+  <view class='btnwrap'>
+      <view class='btns'>
+        <view class='btnitem' data-type='1' bindtap='dosomething'>
+          <image src='/images/z.png'></image>
+          <view class='words'>已解决</view>
+        </view>
+        <view class='btnitem left' data-type='2' bindtap='dosomething'>
+          <image src='/images/z2.png'></image>
+          <view class='words'>未解决</view>
+        </view>
+        <view class='clearfloat'></view>
+      </view>
+  </view>
+  <view wx:if="{{hpid==null}}" class='nodata noaddress {{hpid==null?"active":""}}'>
+    <image src='/images/nodata.png'></image>
+    <view class='tipinfo'>意料之外的问题</view>
+  </view> 
+</view>
